@@ -6,4 +6,5 @@ Cloudflare Pages settings:
 - Framework preset: None
 - Build command: leave blank
 - Build output directory: `/`
-- Production branch: `main`
+
+If this folder is placed inside a larger repository, set the build output directory to the folder that contains this README and `index.html`.

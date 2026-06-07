@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Osho Central USA</title>
+    <style>
+      :root {
+        --ink: #24221d;
+        --muted: #716d63;
+        --cream: #fbf8f0;
+        --soft: #e7ddca;
+        --sage: #6d806f;
+        --sage-dark: #3f5748;
+        --white: #fffdf8;
+        --line: rgba(33, 24, 21, 0.14);
+        --shadow: 0 18px 42px rgba(48, 39, 28, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 16px clamp(18px, 4vw, 58px);
+        background: rgba(251, 248, 240, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 50% 45%, #efe2c9 0 15%, transparent 16%),
+          conic-gradient(from 15deg, var(--sage-dark), var(--sage), var(--soft), #b87b45, var(--sage-dark));
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: clamp(10px, 1.6vw, 20px);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        background: var(--sage-dark);
+        color: white;
+        font-weight: 760;
+        white-space: nowrap;
+      }
+
+      .button.light {
+        background: rgba(255,253,248,0.72);
+        color: var(--ink);
+        border-color: rgba(63, 87, 72, 0.24);
+      }
+
+      .hero {
+        padding: clamp(58px, 8vw, 110px) clamp(18px, 4vw, 58px);
+      }
+
+      .hero-inner,
+      .section-head,
+      .grid,
+      .event-list,
+      .source-note {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: clamp(32px, 5vw, 72px);
+        align-items: center;
+      }
+
+      h1,
+      h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 7vw, 92px);
+        line-height: 0.98;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 1.04;
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      p {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+
+      .eyebrow {
+        color: var(--sage-dark);
+        font-weight: 780;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin: 0 0 14px;
+      }
+
+      .lead {
+        max-width: 640px;
+        color: var(--muted);
+        font-size: clamp(18px, 2vw, 23px);
+        margin: 24px 0 30px;
+      }
+
+      .map-panel {
+        min-height: 460px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(135deg, rgba(251,248,240,0.38), rgba(63,87,72,0.42)),
+          url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=80") center/cover;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pin {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--sage-dark);
+        border: 3px solid white;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.24);
+      }
+
+      .pin.nc { left: 70%; top: 58%; }
+      .pin.ca { left: 15%; top: 58%; }
+      .pin.co { left: 39%; top: 50%; }
+      .pin.ny { left: 80%; top: 42%; }
+      .pin.wa { left: 16%; top: 26%; }
+
+      .band {
+        padding: clamp(56px, 8vw, 92px) clamp(18px, 4vw, 58px);
+      }
+
+      .band.white { background: var(--white); }
+      .band.sage { background: #eef2e8; }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+
+      .section-head p {
+        max-width: 480px;
+      }
+
+      .filters {
+        width: min(1180px, 100%);
+        margin: 0 auto 20px;
+        display: grid;
+        grid-template-columns: 1.4fr repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .field {
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--muted);
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+        box-shadow: 0 8px 20px rgba(48, 26, 15, 0.035);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        border-radius: 999px;
+        background: #eef2e8;
+        color: var(--sage-dark);
+        font-size: 12px;
+        font-weight: 760;
+        margin: 0 6px 12px 0;
+      }
+
+      .card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .profile-list {
+        display: grid;
+        gap: 8px;
+        margin: 16px 0 0;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      .profile-list div {
+        display: grid;
+        grid-template-columns: 86px 1fr;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .profile-list strong {
+        color: var(--ink);
+      }
+
+      .event-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .event-row {
+        display: grid;
+        grid-template-columns: 150px 1fr 180px;
+        gap: 18px;
+        align-items: center;
+        padding: 18px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .date {
+        color: var(--sage-dark);
+        font-weight: 800;
+      }
+
+      .source-note {
+        background: #f7f2e8;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+      }
+
+      footer {
+        padding: 34px clamp(18px, 4vw, 58px);
+        background: #ede5d6;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 940px) {
+        nav { display: none; }
+        .hero-inner,
+        .section-head,
+        .filters,
+        .grid,
+        .event-row,
+        .footer-inner {
+          display: block;
+        }
+        .map-panel {
+          margin-top: 28px;
+        }
+        .field,
+        .card,
+        .event-row {
+          margin-bottom: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="home.html">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Osho Central</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Osho Sangha</a>
+        <a href="usa.html">USA</a>
+        <a href="mexico.html">Mexico</a>
+        <a href="brazil.html">Brazil</a>
+        <a href="colombia.html">Colombia</a>
+        <a href="ecuador.html">Ecuador</a>
+        <a href="costa-rica.html">Costa Rica</a>
+        <a href="dominican-republic.html">Dominican Rep.</a>
+        <a href="americas.html">Americas</a>
+        <a href="events.html">Events</a>
+        <a href="support.html">Support</a>
+        <a href="retreat/index.html">Retreat</a>
+        <a href="home.html#sage">Osho Sage</a>
+      </nav>
+      <a class="button" href="#sources">Review Sources</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Osho Sangha USA</p>
+            <h1>USA centers and public events starter map.</h1>
+            <p class="lead">A first imported dataset from the Osho.com Places to Meditate USA list. The goal is to give each center a simple public profile that leaders can claim, correct, and manage.</p>
+            <div class="card-actions">
+              <a class="button" href="#centers">View Centers</a>
+              <a class="button light" href="#events">View Events</a>
+            </div>
+          </div>
+          <div class="map-panel" aria-label="USA Osho centers map preview">
+            <span class="pin nc"></span>
+            <span class="pin ca"></span>
+            <span class="pin co"></span>
+            <span class="pin ny"></span>
+            <span class="pin wa"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="centers" class="band white">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Centers</p>
+            <h2><span data-center-count>37</span> imported USA center profiles.</h2>
+          </div>
+          <p>These are short imported profiles based on the Osho.com USA listing you provided. Listings remain unverified until a center leader claims them.</p>
+        </div>
+        <div class="filters">
+          <div class="field">Search center, city, state</div>
+          <div class="field">State</div>
+          <div class="field">Type</div>
+          <div class="field">Verified only</div>
+          <div class="field">Has events</div>
+        </div>
+        <div class="grid" data-centers-grid>
+          <article class="card">
+            <span class="badge">Claimed</span>
+            <h3>Osho Meditation Group Raleigh</h3>
+            <p>Raleigh, North Carolina. Local Osho meditation community and host of Osho Meditation Retreat USA.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>Raleigh, NC</span></div>
+              <div><strong>Source</strong><span>Osho Retreat USA</span></div>
+              <div><strong>Status</strong><span>Claimed</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="center-raleigh.html">Profile</a><a class="button light" href="retreat/index.html">Retreat</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>Osho Niranjana Meditation Center</h3>
+            <p>Southern California. Public site says the center has organized meditation events in Southern California since 2009.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>Southern California</span></div>
+              <div><strong>Source</strong><span>Public website</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20Osho%20Niranjana">Claim</a><a class="button light" href="https://www.oshoniranjana.org/">Website</a><a class="button light" href="https://www.oshoniranjana.org/">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>OSHO Meditation Center & Multiversity of California</h3>
+            <p>Moreno Valley, California. Public event page lists Osho meditations and meditation/therapy events.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>Moreno Valley, CA</span></div>
+              <div><strong>Source</strong><span>Public website</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20Osho%20California">Claim</a><a class="button light" href="https://oshocalifornia.org/">Website</a><a class="button light" href="https://oshocalifornia.org/currentevents/">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>Osho Leela Meditation Center</h3>
+            <p>Boulder, Colorado. Nonprofit meditation center with meditation class calendar and events/workshops links.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>Boulder, CO</span></div>
+              <div><strong>Source</strong><span>Public website</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20Osho%20Leela%20USA">Claim</a><a class="button light" href="https://osholeela.org/">Website</a><a class="button light" href="https://osholeela.org/">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>Osho Neo Yoga Meditation Center</h3>
+            <p>Farmingdale, New York. Public site lists center contact information and links to events.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>Farmingdale, NY</span></div>
+              <div><strong>Source</strong><span>Public website / Meetup</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20Osho%20Neo%20Yoga">Claim</a><a class="button light" href="https://www.oshoneoyoga.com/">Website</a><a class="button light" href="https://www.meetup.com/osho-newyork/">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>Osho Meditations NYC</h3>
+            <p>New York City area Meetup connected to Osho Neo Yoga Meditation Center and regional events.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>New York, NY</span></div>
+              <div><strong>Source</strong><span>Meetup</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20Osho%20Brooklyn">Claim</a><a class="button light" href="https://www.meetup.com/oshobrooklyn/">Meetup</a><a class="button light" href="https://www.meetup.com/oshobrooklyn/">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>The World of Meditation</h3>
+            <p>Seattle, Washington. Public site describes an Osho meditation school offering meditations, workshops, events, classes, and support.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>Seattle, WA</span></div>
+              <div><strong>Source</strong><span>Public website</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20World%20of%20Meditation">Claim</a><a class="button light" href="https://worldofmeditation.com/">Website</a><a class="button light" href="https://worldofmeditation.com/">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>Atmo the Soul</h3>
+            <p>San Diego, California based Osho disciple and meditation facilitator with public event listings around the USA.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>San Diego, CA</span></div>
+              <div><strong>Source</strong><span>Public website</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20Atmo%20the%20Soul">Claim</a><a class="button light" href="https://www.atmothesoul.org/">Website</a><a class="button light" href="https://www.atmothesoul.org/events">Events</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Imported</span>
+            <h3>RSSI USA</h3>
+            <p>National Osho sangha initiative in the United States with meditation/event support pages.</p>
+            <div class="profile-list">
+              <div><strong>Location</strong><span>United States</span></div>
+              <div><strong>Source</strong><span>Public website</span></div>
+              <div><strong>Status</strong><span>Needs verification</span></div>
+            </div>
+            <div class="card-actions"><a class="button" href="mailto:oshonc369@gmail.com?subject=Claim%20Osho%20Central%20profile%3A%20RSSI%20USA">Claim</a><a class="button light" href="https://www.rssiusa.org/">Website</a><a class="button light" href="https://www.rssiusa.org/meet-meditate">Events</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="events" class="band sage">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Events</p>
+            <h2>USA event imports.</h2>
+          </div>
+          <p>Dates from public event pages should be checked by an admin before publishing as current.</p>
+        </div>
+        <div class="event-list">
+          <article class="event-row"><div class="date">Nov 12-15, 2026</div><div><h3>Osho Meditation Retreat USA</h3><p>Lake Junaluska, North Carolina · Hosted by Osho Meditation Group Raleigh.</p></div><a class="button" href="retreat/index.html">View</a></article>
+          <article class="event-row"><div class="date">Jun 27</div><div><h3>Family Constellations & Internal Mind Systems Workshop</h3><p>Osho Niranjana Meditation Center · Questhaven Retreat.</p></div><a class="button light" href="https://www.oshoniranjana.org/">Source</a></article>
+          <article class="event-row"><div class="date">Jul 25</div><div><h3>Being Alone Together</h3><p>Osho Niranjana Meditation Center · Questhaven Retreat.</p></div><a class="button light" href="https://www.oshoniranjana.org/">Source</a></article>
+          <article class="event-row"><div class="date">May 2 · verify</div><div><h3>One Day Osho Intensive Meditation for Self Transformation</h3><p>Osho Neo Yoga Meditation Center · Farmingdale, New York. Source-listed event; date should be checked before publishing as upcoming.</p></div><a class="button light" href="https://www.meetup.com/osho-newyork/">Source</a></article>
+          <article class="event-row"><div class="date">May 16 · verify</div><div><h3>One Day Osho Meditation Intensive near Times Square</h3><p>Osho Neo Yoga, Rajneesh Dhyan Mandir NY, and Osho Connecticut collaboration. Source-listed event; date should be checked before publishing as upcoming.</p></div><a class="button light" href="https://www.meetup.com/oshobrooklyn/">Source</a></article>
+          <article class="event-row"><div class="date">Jun 12-14, 2026</div><div><h3>Osho Chakra Workshop with Atmo in New York</h3><p>Atmo the Soul · The Abode, New York.</p></div><a class="button light" href="https://www.atmothesoul.org/events">Source</a></article>
+          <article class="event-row"><div class="date">Recurring</div><div><h3>Lunchtime with Osho Online Meditation</h3><p>The World of Meditation · Online Zoom.</p></div><a class="button light" href="https://worldofmeditation.com/">Source</a></article>
+        </div>
+      </section>
+
+      <section id="claim" class="band white">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Claim Workflow</p>
+            <h2>Let center leaders take ownership.</h2>
+          </div>
+          <p>The final site should make claiming simple, while still protecting the directory from wrong or stale updates.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>1. Request access</h3>
+            <p>A center leader clicks Claim, enters their name, email, role, website, and a short note proving connection to the center.</p>
+          </article>
+          <article class="card">
+            <h3>2. Admin review</h3>
+            <p>Osho Central checks the request against public website, email domain, social pages, or direct confirmation.</p>
+          </article>
+          <article class="card">
+            <h3>3. Manage profile</h3>
+            <p>Approved managers can update description, address, schedule, events, links, photos, and contact details.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="sources" class="band white">
+        <div class="source-note">
+          <p class="eyebrow">Source and Trust Note</p>
+          <h2>Imported, not yet verified.</h2>
+          <p>This page is a product mockup using the Osho.com Places to Meditate USA data you provided. Before launch, Osho Central should show these as imported listings, contact each center, and invite them to claim/update their profile. Center leaders can then correct contact details, add current schedules, upload photos, and publish events.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <strong>Osho Central</strong>
+          <p>Global Osho Centers, Events & Sangha.</p>
+        </div>
+        <div>
+          <p><a href="home.html">Home</a> · <a href="index.html">Osho Sangha</a> · <a href="events.html">Events</a></p>
+        </div>
+      </div>
+    </footer>
+    <script src="usa-osho-centers.js"></script>
+  </body>
+</html>

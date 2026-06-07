@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Support Osho Central</title>
+    <link rel="stylesheet" href="country-directory.css">
+    <style>
+      .payment-note {
+        width: min(1180px, 100%);
+        margin: 22px auto 0;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f7f2e8;
+        color: var(--muted);
+      }
+      .price {
+        display: block;
+        margin: 8px 0 14px;
+        color: var(--sage-dark);
+        font: 700 28px/1 Georgia, "Times New Roman", serif;
+      }
+      .button.disabled {
+        background: #d8d1c4;
+        color: #686158;
+        border-color: var(--line);
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="home.html"><span class="mark" aria-hidden="true"></span><span>Osho Central</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Osho Sangha</a>
+        <a href="americas.html">Americas</a>
+        <a href="usa.html">USA</a>
+        <a href="events.html">Events</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <a class="button" href="#support-options">Support the Project</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Independent Osho Central Project</p>
+            <h1>Support the directory, events map, and Osho Sage.</h1>
+            <p class="lead">Osho Central will stay separate from the retreat Wix site. Contributions support the platform, directory work, hosting, data verification, and community tools.</p>
+            <div class="card-actions">
+              <a class="button" href="#support-options">View Options</a>
+              <a class="button light" href="mailto:oshonc369@gmail.com?subject=Osho%20Central%20payment%20question">Ask a Question</a>
+            </div>
+          </div>
+          <div class="map-panel" aria-label="Osho Central support preview">
+            <span class="pin one"></span><span class="pin two"></span><span class="pin three"></span><span class="pin four"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="support-options" class="band white">
+        <div class="section-head">
+          <div><p class="eyebrow">Payment Options</p><h2>Ready for Stripe or PayPal links.</h2></div>
+          <p>These buttons are wired through one small config file. Once your Stripe or PayPal links are pasted in, the page becomes live without redesigning the site.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="badge">One-time</span>
+            <h3>Support Osho Central</h3>
+            <span class="price">Pay what feels right</span>
+            <p>Help with hosting, directory cleanup, center verification, and the early build of Osho Sage.</p>
+            <div class="card-actions"><a class="button payment-link" data-payment-key="oneTimeSupport" href="mailto:oshonc369@gmail.com?subject=Set%20up%20one-time%20support%20for%20Osho%20Central">Pay / Donate</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Annual</span>
+            <h3>Founding Supporter</h3>
+            <span class="price">Optional yearly support</span>
+            <p>For friends who want to help Osho Central become a real global directory and events platform.</p>
+            <div class="card-actions"><a class="button payment-link" data-payment-key="foundingMember" href="mailto:oshonc369@gmail.com?subject=Set%20up%20founding%20supporter%20payment%20for%20Osho%20Central">Become a Supporter</a></div>
+          </article>
+          <article class="card">
+            <span class="badge">Centers</span>
+            <h3>Center Page Support</h3>
+            <span class="price">Optional contribution</span>
+            <p>For center leaders who want help improving a profile, adding photos, and keeping events current.</p>
+            <div class="card-actions"><a class="button payment-link" data-payment-key="centerPageSupport" href="mailto:oshonc369@gmail.com?subject=Set%20up%20center%20page%20support%20for%20Osho%20Central">Support a Center Page</a></div>
+          </article>
+        </div>
+        <div class="payment-note">
+          <strong>Before public launch:</strong> create Stripe Payment Links or PayPal buttons, paste the URLs into <code>payments-config.js</code>, and test one small payment/refund before announcing the page.
+        </div>
+      </section>
+
+      <section class="band sage">
+        <div class="section-head">
+          <div><p class="eyebrow">Clean Separation</p><h2>Wix retreat payments stay on Wix.</h2></div>
+          <p>Osho Central payments should support the new platform only. The retreat website can continue using Wix booking and Lake Junaluska lodging links.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Retreat</h3><p>Keep retreat registration, lodging, and existing Wix flows where they already work.</p></article>
+          <article class="card"><h3>Osho Central</h3><p>Use separate payments for donations, supporter contributions, and future platform services.</p></article>
+          <article class="card"><h3>Records</h3><p>Keep separate Stripe/PayPal reporting so retreat income and Osho Central support do not get mixed.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div><strong>Osho Central</strong><p>Global Osho Centers, Events & Sangha.</p></div>
+        <div><p><a href="home.html">Home</a> · <a href="americas.html">Americas</a> · <a href="support.html">Support</a></p></div>
+      </div>
+    </footer>
+    <script src="payments-config.js"></script>
+    <script>
+      document.querySelectorAll("[data-payment-key]").forEach((button) => {
+        const key = button.getAttribute("data-payment-key");
+        const link = oshoCentralPaymentLinks[key];
+        if (link) {
+          button.href = link;
+          button.classList.remove("disabled");
+          button.removeAttribute("aria-disabled");
+          return;
+        }
+        const subject = encodeURIComponent(`Set up ${button.textContent.trim()} for Osho Central`);
+        button.href = `mailto:${oshoCentralPaymentLinks.contactEmail}?subject=${subject}`;
+        button.classList.add("disabled");
+        button.setAttribute("aria-disabled", "true");
+        button.textContent = "Payment Link Coming Soon";
+      });
+    </script>
+  </body>
+</html>

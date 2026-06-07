@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Osho Meditation Group Raleigh | Osho Sangha</title>
+    <style>
+      :root {
+        --ink: #24221d;
+        --muted: #716d63;
+        --cream: #fbf8f0;
+        --paper: #f2ecdf;
+        --soft: #e7ddca;
+        --sage: #6d806f;
+        --sage-dark: #3f5748;
+        --white: #fffdf8;
+        --line: rgba(33, 24, 21, 0.14);
+        --shadow: 0 18px 42px rgba(48, 39, 28, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 16px clamp(18px, 4vw, 58px);
+        background: rgba(251, 248, 240, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 50% 45%, #efe2c9 0 15%, transparent 16%),
+          conic-gradient(from 15deg, var(--sage-dark), var(--sage), var(--soft), #b87b45, var(--sage-dark));
+        box-shadow: inset 0 0 0 3px rgba(255,255,255,0.55);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2vw, 26px);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        background: var(--sage-dark);
+        color: white;
+        font-weight: 760;
+        white-space: nowrap;
+        box-shadow: 0 12px 24px rgba(63, 87, 72, 0.16);
+      }
+
+      .button.light {
+        background: rgba(255,253,248,0.75);
+        color: var(--ink);
+        border-color: rgba(63, 87, 72, 0.24);
+        box-shadow: none;
+      }
+
+      .hero {
+        padding: clamp(48px, 7vw, 96px) clamp(18px, 4vw, 58px);
+        background:
+          linear-gradient(90deg, rgba(251,248,240,0.95), rgba(251,248,240,0.8), rgba(251,248,240,0.34)),
+          url("assets/images/lake-junaluska-header.jpg") center/cover;
+      }
+
+      .hero-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(28px, 5vw, 70px);
+        align-items: end;
+      }
+
+      h1,
+      h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 780px;
+        font-size: clamp(44px, 6vw, 82px);
+        line-height: 0.98;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: clamp(30px, 4vw, 52px);
+        line-height: 1.05;
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      p {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+
+      .eyebrow {
+        color: var(--sage-dark);
+        font-weight: 780;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin: 0 0 14px;
+      }
+
+      .lead {
+        max-width: 620px;
+        color: #504b43;
+        font-size: clamp(18px, 2vw, 22px);
+        margin: 24px 0 30px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .profile-card {
+        background: rgba(255,253,248,0.9);
+        border: 1px solid rgba(63,87,72,0.2);
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .center-logo {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        margin-bottom: 18px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        border-radius: 999px;
+        background: #eef2e8;
+        color: var(--sage-dark);
+        font-size: 12px;
+        font-weight: 760;
+        margin: 0 8px 10px 0;
+      }
+
+      .quick-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .quick-list div {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 14px;
+        padding-top: 12px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .quick-list strong {
+        color: var(--ink);
+      }
+
+      .band {
+        padding: clamp(54px, 7vw, 88px) clamp(18px, 4vw, 58px);
+      }
+
+      .band.white { background: var(--white); }
+      .band.sage { background: #eef2e8; }
+
+      .layout {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 340px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: clamp(22px, 3vw, 30px);
+        box-shadow: 0 8px 20px rgba(48, 26, 15, 0.035);
+      }
+
+      .side-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+        position: sticky;
+        top: 92px;
+      }
+
+      .activity-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .community-photo {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+      }
+
+      .portrait-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .portrait-tile {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .portrait-tile img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        display: block;
+      }
+
+      .portrait-tile div {
+        padding: 12px;
+      }
+
+      .portrait-tile strong {
+        display: block;
+      }
+
+      .portrait-tile span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .activity {
+        background: #f7f2e8;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        min-height: 96px;
+      }
+
+      .event-row {
+        display: grid;
+        grid-template-columns: 110px 1fr auto;
+        gap: 16px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
+        align-items: center;
+      }
+
+      .event-row:last-child { border-bottom: 0; }
+
+      .event-row strong { color: var(--sage-dark); }
+
+      .map-box {
+        min-height: 280px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(135deg, rgba(63,87,72,0.52), rgba(251,248,240,0.35)),
+          url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80") center/cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pin {
+        position: absolute;
+        left: 42%;
+        top: 43%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--sage-dark);
+        border: 3px solid white;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.24);
+      }
+
+      .claim-box {
+        background: #f5efe4;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+      }
+
+      footer {
+        padding: 34px clamp(18px, 4vw, 58px);
+        background: #ede5d6;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 940px) {
+        nav { display: none; }
+        .hero-inner,
+        .layout,
+        .activity-grid,
+        .photo-grid,
+        .portrait-grid,
+        .event-row {
+          grid-template-columns: 1fr;
+        }
+        .side-card {
+          position: static;
+        }
+        .quick-list div {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+        .footer-inner {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="home.html">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Osho Central</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Osho Sangha</a>
+        <a href="events.html">Events</a>
+        <a href="support.html">Support</a>
+        <a href="retreat/index.html">Retreat</a>
+        <a href="home.html#sage">Osho Sage</a>
+      </nav>
+      <a class="button" href="#claim">Manage This Page</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Osho Sangha · Claimed Profile</p>
+            <h1>Osho Meditation Group Raleigh</h1>
+            <p class="lead">A warm North Carolina meditation community practicing Osho active meditations, weekly gatherings, special events, and the annual Osho Meditation Retreat USA.</p>
+            <div class="hero-actions">
+              <a class="button" href="retreat/index.html">View Retreat</a>
+              <a class="button light" href="https://www.oshoretreatusa.com/">Visit Website</a>
+            </div>
+          </div>
+          <aside class="profile-card" aria-label="Center summary">
+            <img class="center-logo" src="assets/images/community/nc-osho-logo.png" alt="NC Osho Center logo">
+            <span class="badge">Claimed</span>
+            <span class="badge">Active</span>
+            <div class="quick-list">
+              <div><strong>Location</strong><span>Raleigh, North Carolina, United States</span></div>
+              <div><strong>Address</strong><span>6608 Rest Haven Dr, Raleigh, NC</span></div>
+              <div><strong>Email</strong><span>oshonc369@gmail.com</span></div>
+              <div><strong>Founded</strong><span>Community active since 2012</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="band white">
+        <div class="layout">
+          <div class="stack">
+            <article class="card">
+              <p class="eyebrow">About</p>
+              <h2>About this community.</h2>
+              <p>The Osho Meditation Group Raleigh has been a living presence for meditation and inner exploration in North Carolina since 2012. What began as a small circle of friends sitting together in meditation has slowly grown into a warm and diverse community of seekers from across the region.</p>
+              <p>For more than a decade the group has gathered regularly at 6608 Rest Haven Dr, Raleigh, NC, sharing Osho's unique and transformative meditation techniques. Through weekly sessions, special events, and community gatherings, it has created a welcoming space where people can slow down, reconnect with themselves, and experience the joy of meditation in a supportive environment.</p>
+              <p>The group is open to people of all backgrounds, cultures, and spiritual paths. No previous meditation experience is required.</p>
+            </article>
+
+            <article class="card">
+              <p class="eyebrow">Community</p>
+              <h2>People, practice, and friendship.</h2>
+              <div class="photo-grid">
+                <img class="community-photo" src="assets/images/community/raleigh-group.jpg" alt="NC Osho Center community gathering in Raleigh">
+                <div class="portrait-grid">
+                  <div class="portrait-tile">
+                    <img src="assets/images/community/team-raman.jpg" alt="Swami Raman">
+                    <div><strong>Swami Raman</strong><span>Osho Center Leader</span></div>
+                  </div>
+                  <div class="portrait-tile">
+                    <img src="assets/images/community/team-rishabh.jpg" alt="Rishabh">
+                    <div><strong>Rishabh</strong><span>Webmaster</span></div>
+                  </div>
+                  <div class="portrait-tile">
+                    <img src="assets/images/community/team-nishant.jpg" alt="Nishant Bhatta">
+                    <div><strong>Nishant Bhatta</strong><span>Music DJ</span></div>
+                  </div>
+                  <div class="portrait-tile">
+                    <img src="assets/images/community/team-cathy.jpg" alt="Cathy Buckley">
+                    <div><strong>Cathy Buckley</strong><span>Honorable Member</span></div>
+                  </div>
+                  <div class="portrait-tile">
+                    <img src="assets/images/community/team-sean-lewis.jpg" alt="Sean Lewis">
+                    <div><strong>Sean Lewis</strong><span>Community member</span></div>
+                  </div>
+                  <div class="portrait-tile">
+                    <img src="assets/images/community/facilitator-portrait.jpg" alt="Swami Bodhi Soham">
+                    <div><strong>Swami Bodhi Soham</strong><span>Retreat manager</span></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <p class="eyebrow">Meditations</p>
+              <h2>What they offer.</h2>
+              <div class="activity-grid">
+                <div class="activity"><strong>Dynamic Meditation</strong><p>Active morning meditation with movement, breath, catharsis, silence, and celebration.</p></div>
+                <div class="activity"><strong>Kundalini Meditation</strong><p>Evening meditation with shaking, dance, stillness, and silent sitting.</p></div>
+                <div class="activity"><strong>Nadabrahma</strong><p>A humming meditation that supports balance, softness, and inwardness.</p></div>
+                <div class="activity"><strong>Nataraj</strong><p>A dance meditation that uses movement as a doorway into silence.</p></div>
+                <div class="activity"><strong>No-Mind</strong><p>An expressive meditation process followed by silence.</p></div>
+                <div class="activity"><strong>White Robe Brotherhood</strong><p>Evening gathering with Osho discourse, sitting, music, and silence.</p></div>
+              </div>
+            </article>
+
+            <article id="events" class="card">
+              <p class="eyebrow">Events</p>
+              <h2>Upcoming and recurring.</h2>
+              <div class="event-row">
+                <strong>Nov 12-15</strong>
+                <div>
+                  <h3>Osho Meditation Retreat USA</h3>
+                  <p>Lake Junaluska, North Carolina · Four days of meditation, silence, inquiry, and celebration.</p>
+                </div>
+                <span class="badge">Retreat</span>
+              </div>
+              <div class="event-row">
+                <strong>Weekly</strong>
+                <div>
+                  <h3>Osho Active Meditations</h3>
+                  <p>Regular group practice in Raleigh. Exact weekly schedule to be confirmed.</p>
+                </div>
+                <span class="badge">Meditation</span>
+              </div>
+              <div class="event-row">
+                <strong>Seasonal</strong>
+                <div>
+                  <h3>Special Events and Gatherings</h3>
+                  <p>Community gatherings, workshops, celebrations, and retreat preparation events.</p>
+                </div>
+                <span class="badge">Community</span>
+              </div>
+            </article>
+          </div>
+
+          <aside class="side-card">
+            <h3>Profile status</h3>
+            <p><span class="badge">Claimed</span></p>
+            <p>This profile is managed by the Raleigh community and can show verified details, events, and contact information.</p>
+            <div class="map-box" aria-label="Map preview for Raleigh center">
+              <span class="pin"></span>
+            </div>
+            <p style="margin-top:16px;">Raleigh, North Carolina</p>
+            <a class="button" href="mailto:oshonc369@gmail.com">Contact Center</a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="claim" class="band sage">
+        <div class="layout">
+          <div>
+            <p class="eyebrow">Claim and manage</p>
+            <h2>How this will work for every center.</h2>
+            <p>A center representative can request access, verify their relationship to the center, and then update their profile, events, photos, and contact details from a simple dashboard.</p>
+          </div>
+          <div class="claim-box">
+            <h3>Manager tools</h3>
+            <p>Update address, contact, meditation schedule, center description, website links, event listings, and photos.</p>
+            <a class="button light" href="mailto:oshonc369@gmail.com?subject=Request%20management%20access%20for%20NC%20Osho%20Center">Request Management Access</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+        <div>
+          <strong>Osho Central</strong>
+          <p>Global Osho Centers, Events & Sangha.</p>
+        </div>
+        <div>
+          <p><a href="home.html">Home</a> · <a href="index.html">Osho Sangha</a> · <a href="retreat/index.html">Retreat</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

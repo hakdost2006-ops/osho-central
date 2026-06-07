@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Osho Central Mexico</title>
+    <style>
+      :root {
+        --ink: #24221d;
+        --muted: #716d63;
+        --cream: #fbf8f0;
+        --soft: #e7ddca;
+        --sage: #6d806f;
+        --sage-dark: #3f5748;
+        --white: #fffdf8;
+        --line: rgba(33, 24, 21, 0.14);
+        --shadow: 0 18px 42px rgba(48, 39, 28, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 16px clamp(18px, 4vw, 58px);
+        background: rgba(251, 248, 240, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 50% 45%, #efe2c9 0 15%, transparent 16%),
+          conic-gradient(from 15deg, var(--sage-dark), var(--sage), var(--soft), #b87b45, var(--sage-dark));
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: clamp(10px, 1.6vw, 20px);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        background: var(--sage-dark);
+        color: white;
+        font-weight: 760;
+        white-space: nowrap;
+      }
+
+      .button.light {
+        background: rgba(255,253,248,0.72);
+        color: var(--ink);
+        border-color: rgba(63, 87, 72, 0.24);
+      }
+
+      .hero,
+      .band {
+        padding: clamp(56px, 8vw, 96px) clamp(18px, 4vw, 58px);
+      }
+
+      .hero-inner,
+      .section-head,
+      .grid,
+      .source-note {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: clamp(30px, 5vw, 70px);
+        align-items: center;
+      }
+
+      h1,
+      h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 7vw, 92px);
+        line-height: 0.98;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 1.04;
+      }
+
+      h3 { margin: 0 0 10px; font-size: 22px; }
+      p { color: var(--muted); margin: 0 0 16px; }
+
+      .eyebrow {
+        color: var(--sage-dark);
+        font-weight: 780;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin: 0 0 14px;
+      }
+
+      .lead {
+        max-width: 640px;
+        color: var(--muted);
+        font-size: clamp(18px, 2vw, 23px);
+        margin: 24px 0 30px;
+      }
+
+      .map-panel {
+        min-height: 460px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(135deg, rgba(251,248,240,0.38), rgba(63,87,72,0.42)),
+          url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=80") center/cover;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pin {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--sage-dark);
+        border: 3px solid white;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.24);
+      }
+
+      .pin.one { left: 43%; top: 42%; }
+      .pin.two { left: 49%; top: 47%; }
+      .pin.three { left: 46%; top: 55%; }
+      .pin.four { left: 36%; top: 58%; }
+      .pin.five { left: 52%; top: 61%; }
+
+      .band.white { background: var(--white); }
+      .band.sage { background: #eef2e8; }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+
+      .section-head p { max-width: 500px; }
+
+      .filters {
+        width: min(1180px, 100%);
+        margin: 0 auto 20px;
+        display: grid;
+        grid-template-columns: 1.4fr repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .field {
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--muted);
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+        box-shadow: 0 8px 20px rgba(48, 26, 15, 0.035);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        border-radius: 999px;
+        background: #eef2e8;
+        color: var(--sage-dark);
+        font-size: 12px;
+        font-weight: 760;
+        margin: 0 6px 12px 0;
+      }
+
+      .profile-list {
+        display: grid;
+        gap: 8px;
+        margin: 16px 0 0;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      .profile-list div {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .profile-list strong { color: var(--ink); }
+
+      .card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .source-note {
+        background: #f7f2e8;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+      }
+
+      footer {
+        padding: 34px clamp(18px, 4vw, 58px);
+        background: #ede5d6;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 940px) {
+        nav { display: none; }
+        .hero-inner,
+        .section-head,
+        .filters,
+        .grid,
+        .footer-inner {
+          display: block;
+        }
+        .map-panel,
+        .card,
+        .field { margin-top: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="home.html">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Osho Central</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Osho Sangha</a>
+        <a href="usa.html">USA</a>
+        <a href="mexico.html">Mexico</a>
+        <a href="brazil.html">Brazil</a>
+        <a href="colombia.html">Colombia</a>
+        <a href="ecuador.html">Ecuador</a>
+        <a href="costa-rica.html">Costa Rica</a>
+        <a href="dominican-republic.html">Dominican Rep.</a>
+        <a href="americas.html">Americas</a>
+        <a href="events.html">Events</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <a class="button" href="#claim">Claim a Center</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Osho Sangha Mexico</p>
+            <h1><span data-center-count>21</span> Mexico center profiles imported from Osho.com.</h1>
+            <p class="lead">Short public profiles for Mexico centers and meditation activities, ready for review, enrichment, and center-leader claims.</p>
+            <div class="card-actions">
+              <a class="button" href="#centers">View Centers</a>
+              <a class="button light" href="#claim">Claim Workflow</a>
+            </div>
+          </div>
+          <div class="map-panel" aria-label="Mexico Osho centers map preview">
+            <span class="pin one"></span>
+            <span class="pin two"></span>
+            <span class="pin three"></span>
+            <span class="pin four"></span>
+            <span class="pin five"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="centers" class="band white">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Mexico</p>
+            <h2>Claimable imported profiles.</h2>
+          </div>
+          <p>Each profile uses the Osho.com Mexico data you provided. Website/social links are included when listed in the source.</p>
+        </div>
+        <div class="filters">
+          <div class="field">Search center, city, state</div>
+          <div class="field">State</div>
+          <div class="field">Type</div>
+          <div class="field">Has website</div>
+          <div class="field">Starred</div>
+        </div>
+        <div class="grid" data-centers-grid></div>
+      </section>
+
+      <section id="claim" class="band sage">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Claim Workflow</p>
+            <h2>Let Mexican center leaders update their pages.</h2>
+          </div>
+          <p>Imported pages should invite correction and ownership instead of pretending old public data is final.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>1. Claim</h3>
+            <p>A center leader submits their name, email, role, and proof of connection to the center.</p>
+          </article>
+          <article class="card">
+            <h3>2. Review</h3>
+            <p>Osho Central checks the public source, email, website, or social page before granting access.</p>
+          </article>
+          <article class="card">
+            <h3>3. Manage</h3>
+            <p>Approved leaders update contact details, meditation schedule, events, photos, and current programs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band white">
+        <div class="source-note">
+          <p class="eyebrow">Source Note</p>
+          <h2>Imported from Osho.com Mexico list.</h2>
+          <p>These records should be shown as imported and unverified until each center confirms the details. The next enrichment step is to look for current websites, social media pages, and event calendars for each listing.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <strong>Osho Central</strong>
+          <p>Global Osho Centers, Events & Sangha.</p>
+        </div>
+        <div>
+          <p><a href="home.html">Home</a> · <a href="usa.html">USA</a> · <a href="americas.html">Americas</a></p>
+        </div>
+      </div>
+    </footer>
+    <script src="mexico-osho-centers.js"></script>
+  </body>
+</html>
