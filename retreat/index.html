@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Osho Meditation Retreat USA</title>
+    <style>
+      :root {
+        --ink: #24221d;
+        --muted: #716d63;
+        --cream: #fbf8f0;
+        --paper: #f2ecdf;
+        --soft: #e7ddca;
+        --accent: #b87b45;
+        --accent-soft: #e3c8a8;
+        --sage: #6d806f;
+        --sage-dark: #3f5748;
+        --moss: #889072;
+        --white: #fffdf8;
+        --line: rgba(33, 24, 21, 0.14);
+        --shadow: 0 18px 42px rgba(48, 39, 28, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 16px clamp(18px, 4vw, 58px);
+        background: rgba(255, 248, 237, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 780;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 50% 45%, #efe2c9 0 15%, transparent 16%),
+          conic-gradient(from 15deg, var(--sage-dark), var(--sage), var(--accent-soft), var(--moss), var(--sage-dark));
+        box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.5);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2vw, 26px);
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        background: var(--sage-dark);
+        color: white;
+        font-weight: 760;
+        white-space: nowrap;
+        box-shadow: 0 12px 24px rgba(63, 87, 72, 0.16);
+      }
+
+      .button.accent {
+        background: var(--sage-dark);
+        box-shadow: 0 12px 24px rgba(63, 87, 72, 0.18);
+      }
+
+      .button.secondary {
+        background: rgba(255, 253, 248, 0.64);
+        color: inherit;
+        border-color: rgba(63, 87, 72, 0.28);
+        box-shadow: none;
+      }
+
+      .button.light {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+        box-shadow: none;
+      }
+
+      .button.wide {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: calc(100vh - 72px);
+        display: grid;
+        align-items: end;
+        padding: clamp(48px, 8vw, 110px) clamp(18px, 4vw, 58px);
+        background:
+          linear-gradient(90deg, rgba(251, 248, 240, 0.84), rgba(251, 248, 240, 0.52) 48%, rgba(251, 248, 240, 0.18)),
+          url("../assets/images/lake-junaluska-header.jpg") center/cover;
+        color: var(--ink);
+      }
+
+      .hero-inner {
+        width: min(840px, 100%);
+      }
+
+      .eyebrow {
+        color: var(--sage-dark);
+        font-weight: 780;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin: 0 0 14px;
+      }
+
+      h1,
+      h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 780px;
+        font-size: clamp(44px, 6vw, 82px);
+        line-height: 1;
+      }
+
+      .hero-copy {
+        max-width: 590px;
+        margin: 24px 0 30px;
+        color: #48443d;
+        font-size: clamp(17px, 1.9vw, 21px);
+      }
+
+      .hero-actions,
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero-facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        width: min(820px, 100%);
+        margin-top: 42px;
+      }
+
+      .fact {
+        min-height: 92px;
+        padding: 16px;
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.72);
+        border: 1px solid rgba(63, 87, 72, 0.16);
+        backdrop-filter: blur(6px);
+      }
+
+      .fact strong {
+        display: block;
+        font-size: 19px;
+        margin-bottom: 4px;
+      }
+
+      .fact span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .band {
+        padding: clamp(58px, 8vw, 92px) clamp(18px, 4vw, 58px);
+      }
+
+      .band.compact {
+        padding-top: clamp(36px, 5vw, 62px);
+        padding-bottom: clamp(36px, 5vw, 62px);
+      }
+
+      .band.white {
+        background: var(--white);
+      }
+
+      .band.sage {
+        background: #eef2e8;
+        color: var(--ink);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin: 0 auto 32px;
+        width: min(1180px, 100%);
+      }
+
+      .section-head h2 {
+        margin: 0;
+        max-width: 710px;
+        font-size: clamp(32px, 4.2vw, 56px);
+        line-height: 1.02;
+      }
+
+      .section-head p {
+        max-width: 450px;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .centered {
+        width: min(820px, 100%);
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .centered h2 {
+        margin: 0;
+        font-size: clamp(34px, 4vw, 56px);
+        line-height: 1.04;
+      }
+
+      .centered p {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 18px 0 0;
+      }
+
+      .sage .section-head p,
+      .sage p {
+        color: var(--muted);
+      }
+
+      .grid-3 {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .grid-2 {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .essentials {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--line);
+      }
+
+      .essential {
+        background: var(--white);
+        padding: 22px;
+      }
+
+      .essential span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+
+      .essential strong {
+        display: block;
+        font-size: 20px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 8px 20px rgba(48, 26, 15, 0.035);
+      }
+
+      .sage .card {
+        background: var(--white);
+        border-color: rgba(63, 87, 72, 0.16);
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+      }
+
+      .card p {
+        margin: 0 0 18px;
+      }
+
+      .card-photo {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .portrait-photo {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .wide-photo {
+        width: min(1180px, 100%);
+        margin: 0 auto 24px;
+        aspect-ratio: 16 / 8;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        display: block;
+      }
+
+      .workshop-block {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 8px;
+        border: 1px solid rgba(63, 87, 72, 0.18);
+        background: #f7f2e8;
+      }
+
+      .workshop-block h4 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: var(--sage-dark);
+      }
+
+      .sage .card p,
+      .sage .card li {
+        color: var(--muted);
+      }
+
+      .split {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(24px, 5vw, 68px);
+        align-items: center;
+      }
+
+      .photo {
+        min-height: 540px;
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(33,24,21,0.05), rgba(33,24,21,0.18)),
+          url("../assets/images/community/osho-portrait.jpg") center/cover;
+        box-shadow: var(--shadow);
+      }
+
+      .price {
+        font-size: 42px;
+        font-weight: 830;
+        color: var(--sage-dark);
+        line-height: 1;
+        margin: 8px 0 12px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .schedule {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .day {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 18px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .day strong {
+        color: var(--sage-dark);
+      }
+
+      .agenda {
+        margin-top: 10px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .agenda-row {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 16px;
+      }
+
+      .agenda-row span {
+        color: var(--sage-dark);
+        font-weight: 760;
+      }
+
+      .program-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 22px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .program-list li {
+        padding: 12px 0 12px 28px;
+        border-bottom: 1px solid var(--line);
+        position: relative;
+      }
+
+      .program-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        color: var(--muted);
+      }
+
+      .table th,
+      .table td {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .table th {
+        color: var(--ink);
+        font-weight: 760;
+      }
+
+      .link-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .link-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .link-row span {
+        color: var(--muted);
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 12px;
+      }
+
+      .field {
+        width: 100%;
+        min-height: 46px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        padding: 12px 14px;
+        color: var(--muted);
+      }
+
+      textarea.field {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .note {
+        width: min(980px, 100%);
+        margin: 28px auto 0;
+        padding: 18px 22px;
+        border-left: 4px solid var(--sage);
+        background: rgba(109,128,111,0.1);
+        color: var(--muted);
+      }
+
+      .register-panel {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 28px;
+        align-items: center;
+        background: var(--white);
+        border: 1px solid rgba(63, 87, 72, 0.16);
+        border-radius: 8px;
+        padding: clamp(24px, 4vw, 42px);
+      }
+
+      .register-panel h2 {
+        margin: 0;
+        font-size: clamp(30px, 3.6vw, 48px);
+        line-height: 1.05;
+      }
+
+      .register-panel p {
+        color: var(--muted);
+        margin: 14px 0 0;
+      }
+
+      .mini-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+        color: var(--muted);
+      }
+
+      .mini-list div {
+        padding-top: 10px;
+        border-top: 1px solid var(--line);
+      }
+
+      .chat-box {
+        background: #f5efe4;
+        color: var(--ink);
+        border-radius: 8px;
+        padding: 24px;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: var(--shadow);
+      }
+
+      .message {
+        background: rgba(255, 253, 248, 0.78);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+      }
+
+      .message.answer {
+        background: rgba(109,128,111,0.14);
+      }
+
+      .source {
+        margin-top: 10px;
+        color: var(--sage-dark);
+        font-size: 13px;
+      }
+
+      .input-line {
+        display: flex;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .input-line div {
+        flex: 1;
+        min-height: 44px;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.74);
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+      }
+
+      .map-area {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 22px;
+      }
+
+      .map {
+        min-height: 440px;
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(63,87,72,0.68), rgba(184,123,69,0.22)),
+          url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1500&q=80") center/cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pin {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--sage-dark);
+        border: 3px solid white;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      }
+
+      .pin.one { left: 21%; top: 37%; }
+      .pin.two { left: 48%; top: 33%; }
+      .pin.three { left: 68%; top: 48%; }
+      .pin.four { left: 77%; top: 62%; }
+
+      .article-grid {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr 0.8fr;
+        gap: 18px;
+      }
+
+      .article {
+        min-height: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+      }
+
+      .article.featured {
+        background:
+          linear-gradient(180deg, rgba(251,248,240,0.26), rgba(251,248,240,0.9)),
+          url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80") center/cover;
+        color: var(--ink);
+      }
+
+      .faq {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      details {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px 20px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 760;
+      }
+
+      details p {
+        color: var(--muted);
+        margin: 14px 0 0;
+      }
+
+      .footer {
+        padding: 38px clamp(18px, 4vw, 58px);
+        background: #ede5d6;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 22px;
+      }
+
+      .future-band {
+        background: #f6f1e8;
+      }
+
+      .future-grid {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      @media (max-width: 920px) {
+        .nav {
+          display: none;
+        }
+
+        .hero-facts,
+        .grid-3,
+        .grid-2,
+        .essentials,
+        .split,
+        .register-panel,
+        .map-area,
+        .article-grid,
+        .future-grid,
+        .faq {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          display: block;
+        }
+
+        .section-head p {
+          margin-top: 12px;
+        }
+
+        .hero {
+          min-height: 720px;
+        }
+
+        .day {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+
+        .agenda-row {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+
+        .program-list {
+          grid-template-columns: 1fr;
+        }
+
+        .photo {
+          min-height: 380px;
+        }
+
+        .footer-inner {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Osho Retreat USA</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#retreat">Retreat</a>
+        <a href="#about-us">About</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#meditations">Meditations</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#book-online">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button accent" href="#register">Register</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">November 12-15, 2026 · Lake Junaluska, North Carolina</p>
+          <h1>Osho Meditation Retreat</h1>
+          <p class="hero-copy">Four days of meditation, silence, inquiry, and celebration. Open to beginners and experienced meditators alike.</p>
+          <div class="hero-actions">
+            <a class="button accent" href="#register">Reserve Your Place</a>
+            <a class="button secondary" href="#retreat">Explore the Retreat</a>
+          </div>
+          <div class="hero-facts" aria-label="Retreat highlights">
+            <div class="fact">
+              <strong>4 days</strong>
+              <span>Thursday evening through Sunday afternoon</span>
+            </div>
+            <div class="fact">
+              <strong>From $295</strong>
+              <span>Early bird retreat registration: $295</span>
+            </div>
+            <div class="fact">
+              <strong>$775-$1,095</strong>
+              <span>Estimated total with lodging and meals</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="retreat" class="band white">
+        <div class="split">
+          <div>
+            <p class="eyebrow">The Retreat</p>
+            <h2>Arrive, slow down, and give yourself to meditation.</h2>
+            <p class="muted">Due to strong interest from Osho communities across the U.S., Canada, and Latin America, the main retreat has moved to November. This gives the gathering more space to come together in a grounded, connected, and truly alive way.</p>
+            <p class="muted">November in North Carolina offers something unique: nature begins to slow down, colors deepen, and the environment naturally supports introspection, meditation, and inner work. This retreat is not just a program. It is a field we are creating together.</p>
+            <div class="button-row">
+              <a class="button accent" href="#pricing">See Pricing</a>
+              <a class="button light" href="#faq">Read FAQ</a>
+            </div>
+          </div>
+          <div class="photo" aria-label="Lake Junaluska retreat setting"></div>
+        </div>
+      </section>
+
+      <section class="band compact">
+        <div class="essentials" aria-label="Retreat essentials">
+          <div class="essential">
+            <span>Practice</span>
+            <strong>Daily Osho active meditations</strong>
+          </div>
+          <div class="essential">
+            <span>Support</span>
+            <strong>Awareness, relaxation, inquiry</strong>
+          </div>
+          <div class="essential">
+            <span>Setting</span>
+            <strong>Lake walks, vegetarian meals, community</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section-head">
+          <h2>Why attend the retreat?</h2>
+          <p>Osho active meditations are designed for real people living real, busy lives.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3>Relief from stress</h3><p>Release accumulated tension and return to a calmer, more relaxed state.</p></article>
+          <article class="card"><h3>Emotional balance</h3><p>Let go of inner pressure and reconnect with a sense of ease and well-being.</p></article>
+          <article class="card"><h3>Inner silence</h3><p>Move beyond mental noise into a more grounded, peaceful awareness.</p></article>
+          <article class="card"><h3>Renewed vitality</h3><p>Feel lighter, more alive, and more connected to your natural flow.</p></article>
+          <article class="card"><h3>Focus and creativity</h3><p>Clear your mind and approach daily life with greater freshness and perspective.</p></article>
+          <article class="card"><h3>Community</h3><p>Share meditation, silence, and celebration with others in a welcoming atmosphere.</p></article>
+        </div>
+      </section>
+
+      <section id="about-us" class="band white">
+        <div class="section-head">
+          <h2>About NC Osho Meditation Community.</h2>
+          <p>A living meditation field in North Carolina since 2012.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Osho Meditation Group Raleigh / NC Osho Center</h3>
+            <p>The Osho Meditation Group Raleigh has been a living presence for meditation and inner exploration in North Carolina since 2012. What began as a small circle of friends sitting together in meditation has slowly grown into a warm and diverse community of seekers from across the region.</p>
+            <p>For more than a decade we have gathered regularly at 6608 Rest Haven Dr, Raleigh, NC, sharing Osho's unique and transformative meditation techniques. Through weekly sessions, special events, and community gatherings, we have created a welcoming space where people can slow down, reconnect with themselves, and experience the joy of meditation in a supportive environment.</p>
+          </article>
+          <article class="card">
+            <h3>A Bridge Between Generations</h3>
+            <p>Our group is made up of both long-time Osho sannyasins and members of a newer, younger generation discovering Osho for the first time. Some among us had the good fortune to sit in Osho's physical presence; others have come to his work more recently through books, recordings, and meditation experiences.</p>
+            <p>This blend of old and new gives our community a unique flavor, rooted in tradition, yet fresh, open, and evolving. We do not represent any institution or formal organization. We are simply a group of people who have found great value in Osho's approach to meditation and wish to share it with others in a simple, down-to-earth way.</p>
+          </article>
+          <article class="card">
+            <h3>What We Offer</h3>
+            <p>Our focus is on practicing the active and dynamic meditation methods developed by Osho, including Dynamic Meditation, Kundalini Meditation, Nadabrahma, Nataraj, No-Mind, and White Robe Brotherhood Meditation.</p>
+            <p>These techniques are designed specifically for modern life, helping release stress, emotional tension, and mental overload, so that natural silence and awareness can emerge. We meet not to follow a belief system, but to experience meditation directly in movement, silence, celebration, and community.</p>
+          </article>
+          <article class="card">
+            <h3>A Space for Everyone</h3>
+            <p>The Osho Meditation Group Raleigh is open to people of all backgrounds, cultures, and spiritual paths. No previous meditation experience is required. Whether you are curious, skeptical, seasoned, or simply in need of a quiet place to breathe, you are welcome here.</p>
+            <p>Our intention is to provide a safe and supportive space for meditation, share Osho's methods with sincerity and respect, create community based on awareness, friendship, and authenticity, and support personal growth and inner transformation.</p>
+          </article>
+          <article class="card">
+            <h3>From Local Group to Annual Retreat</h3>
+            <p>Over the years our community has dreamed of creating a larger gathering where people from North Carolina and beyond could come together in a deeper way. The annual Osho Meditation Retreat in the mountains of North Carolina is a natural flowering of this intention.</p>
+            <p>This retreat brings together facilitators and participants from different parts of the United States, and hopefully from around the world, to share several days of meditation, silence, music, and celebration.</p>
+          </article>
+          <article class="card">
+            <h3>Our Spirit</h3>
+            <p>We are not teachers. We are not gurus. We are simply fellow travelers walking the path of meditation together. In the words of Osho, meditation is not something to believe in; it is something to experience. We invite you to join us in that experience.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band compact">
+        <div class="section-head">
+          <h2>Meet the team.</h2>
+          <p>Members of the NC Osho community support the retreat and local programs with time, energy, experience, love, and joy.</p>
+        </div>
+        <img class="wide-photo" src="../assets/images/community/raleigh-group.jpg" alt="NC Osho Center community gathering in Raleigh">
+        <div class="grid-3">
+          <article class="card"><img class="portrait-photo" src="../assets/images/community/team-raman.jpg" alt="Swami Raman"><h3>Swami Raman</h3><p>Osho Center Leader</p></article>
+          <article class="card"><img class="portrait-photo" src="../assets/images/community/team-rishabh.jpg" alt="Rishabh"><h3>Rishabh</h3><p>Webmaster</p></article>
+          <article class="card"><img class="portrait-photo" src="../assets/images/community/team-nishant.jpg" alt="Nishant Bhatta"><h3>Nishant Bhatta</h3><p>Music DJ</p></article>
+          <article class="card"><img class="portrait-photo" src="../assets/images/community/team-cathy.jpg" alt="Cathy Buckley"><h3>Cathy Buckley</h3><p>Honorable Member</p></article>
+          <article class="card"><img class="portrait-photo" src="../assets/images/community/team-sean-lewis.jpg" alt="Sean Lewis"><h3>Sean Lewis</h3><p>Community member</p></article>
+          <article class="card"><img class="portrait-photo" src="../assets/images/community/facilitator-portrait.jpg" alt="Swami Bodhi Soham"><h3>Swami Bodhi Soham</h3><p>Retreat manager</p></article>
+        </div>
+      </section>
+
+      <section id="schedule" class="band white">
+        <div class="centered">
+          <p class="eyebrow">Schedule</p>
+          <h2>Hour-by-hour retreat schedule.</h2>
+          <p>A balanced flow of active meditation, silence, connection, and celebration.</p>
+        </div>
+        <div class="schedule">
+          <div class="day">
+            <strong>Thursday, Nov 12<br>Arrival & Opening</strong>
+            <div class="agenda">
+              <div class="agenda-row"><span>2:00-5:00 PM</span><div>Arrival & Check-in</div></div>
+              <div class="agenda-row"><span>5:30-7:00 PM</span><div>Dinner</div></div>
+              <div class="agenda-row"><span>7:00 PM</span><div>White Robe Meditation</div></div>
+              <div class="agenda-row"><span>9:00 PM onward</span><div>Rest / Silence. Quiet hours begin at 10:00 PM.</div></div>
+            </div>
+          </div>
+          <div class="day">
+            <strong>Friday, Nov 13<br>Inner Work & Structure</strong>
+            <div class="agenda">
+              <div class="agenda-row"><span>6:30 AM</span><div>Osho Dynamic Meditation</div></div>
+              <div class="agenda-row"><span>7:45 AM</span><div>Breakfast</div></div>
+              <div class="agenda-row"><span>10:00-11:00 AM</span><div>Lecture / Talk with Osho context, awareness, and meditation foundations</div></div>
+              <div class="agenda-row"><span>11:15 AM-12:15 PM</span><div>No Mind Meditation</div></div>
+              <div class="agenda-row"><span>12:15-1:30 PM</span><div>Lunch</div></div>
+              <div class="agenda-row"><span>2:00-4:00 PM</span><div>Workshop Session / deeper experiential process</div></div>
+              <div class="agenda-row"><span>4:00-5:00 PM</span><div>Osho Kundalini Meditation</div></div>
+              <div class="agenda-row"><span>5:30-7:00 PM</span><div>Dinner</div></div>
+              <div class="agenda-row"><span>7:00 PM</span><div>White Robe Meditation</div></div>
+              <div class="agenda-row"><span>8:00 PM</span><div>Osho Bardo Meditation</div></div>
+            </div>
+          </div>
+          <div class="day">
+            <strong>Saturday, Nov 14<br>Deepening & Celebration</strong>
+            <div class="agenda">
+              <div class="agenda-row"><span>6:30 AM</span><div>Osho Dynamic Meditation</div></div>
+              <div class="agenda-row"><span>7:45 AM</span><div>Breakfast</div></div>
+              <div class="agenda-row"><span>10:00-11:00 AM</span><div>Lecture / Talk</div></div>
+              <div class="agenda-row"><span>11:15 AM-12:00 PM</span><div>No-Dimension Meditation</div></div>
+              <div class="agenda-row"><span>12:15-1:30 PM</span><div>Lunch</div></div>
+              <div class="agenda-row"><span>2:00-4:00 PM</span><div>Workshop Session</div></div>
+              <div class="agenda-row"><span>4:00 PM</span><div>Kundalini Meditation</div></div>
+              <div class="agenda-row"><span>5:30-7:00 PM</span><div>Dinner</div></div>
+              <div class="agenda-row"><span>7:00 PM</span><div>White Robe Meditation</div></div>
+              <div class="agenda-row"><span>8:00-9:30 PM</span><div>Satsang, Music & Kirtan Evening</div></div>
+            </div>
+          </div>
+          <div class="day">
+            <strong>Sunday, Nov 15<br>Integration & Closing</strong>
+            <div class="agenda">
+              <div class="agenda-row"><span>6:30 AM</span><div>Osho Dynamic Meditation</div></div>
+              <div class="agenda-row"><span>7:30 AM</span><div>Breakfast</div></div>
+              <div class="agenda-row"><span>9:30-10:45 AM</span><div>Osho-led Discussions / Integration Circle</div></div>
+              <div class="agenda-row"><span>11:00 AM</span><div>Closing remarks & departures</div></div>
+              <div class="agenda-row"><span>By 12:00 PM</span><div>Meeting space cleared</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="note">Meditations may include Osho Dynamic, Kundalini, Nadabrahma, Nataraj, Vipassana, White Robe, sound healing, laughter, dance, and silent sitting.</div>
+      </section>
+
+      <section class="band sage compact">
+        <div class="centered">
+          <p class="eyebrow">Meditation</p>
+          <h2>Movement when energy wants to move. Silence when the body is ready to rest.</h2>
+          <p>Osho active meditations support release through breath, sound, dance, and awareness. After movement, silence can come naturally.</p>
+        </div>
+      </section>
+
+      <section id="meditations" class="band white">
+        <div class="section-head">
+          <h2>Meditations and program.</h2>
+          <p>These are the core practices currently described on the Wix site.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Dynamic Meditation</h3>
+            <p>A five-stage meditation using breath, movement, expression, stillness, and celebration to break old patterns and open a path to deeper stillness.</p>
+          </article>
+          <article class="card">
+            <h3>Kundalini Meditation</h3>
+            <p>Gentle shaking, spontaneous dancing, and silent witnessing help release accumulated tension and let energy move naturally.</p>
+          </article>
+          <article class="card">
+            <h3>Nataraj Meditation</h3>
+            <p>Dance becomes meditation. There are no steps to follow, only the invitation to let go and move as energy guides you.</p>
+          </article>
+          <article class="card">
+            <h3>Nadabrahma Meditation</h3>
+            <p>A humming meditation that brings body, mind, and energy into harmony through sound, slow hand movements, and silence.</p>
+          </article>
+          <article class="card">
+            <h3>Osho Bardo Meditation</h3>
+            <p>A meditative approach focused on transitions of consciousness, letting go of habitual patterns, and deepening presence.</p>
+          </article>
+          <article class="card">
+            <h3>No Mind Meditation</h3>
+            <p>This practice helps settle the restless thinking mind by guiding participants through letting go of thoughts and experiences in a gentle, step-by-step way. It supports witness consciousness and inner spaciousness, especially for people who struggle with overthinking or mental restlessness.</p>
+          </article>
+          <article class="card">
+            <h3>White Robe Brotherhood</h3>
+            <p>An evening group meditation rooted in shared presence, silence, openness, and collective stillness.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="speakers" class="band">
+        <div class="section-head">
+          <h2>Speakers and facilitators.</h2>
+          <p>Speaker and workshop content migrated from the current Facilitators page.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <img class="card-photo" src="../assets/images/community/shailendra-nature.jpg" alt="Swami Shailendra Saraswati meditating outdoors">
+            <h3>Swami Shailendra Saraswati</h3>
+            <p>Swami Shailendra Saraswati was born on June 17, 1955, in Gadarwara, India, and is Osho's fifth brother. A medical doctor by training, he served at Osho's Pune ashram hospital and later lived in Rajneeshpuram.</p>
+            <p>For decades he has translated and edited Osho's works, led meditation camps, and delivered more than 1,000 talks across India, Nepal, and internationally, with his teachings available in books and audio-video recordings. Known for his clear and accessible presentation of Osho's wisdom, he continues to share meditation practices both in person and online.</p>
+            <p><strong>At the retreat:</strong> Swamiji will offer morning discourse sessions from 10:00-11:00 AM on Friday and Saturday, presented in an interactive Q&A format.</p>
+          </article>
+          <article class="card">
+            <img class="card-photo" src="../assets/images/community/facilitator-portrait.jpg" alt="Swami Bodhi Soham">
+            <h3>Swami Bodhi Soham</h3>
+            <p>Swami Bodhi Soham is a meditation teacher, intuitive coach, and Daoist practitioner who blends ancient wisdom with modern embodiment. Originally from Uzbekistan, his journey into meditation began through personal healing and led him to train in Osho meditations, Taoist alchemy, Qigong, Sufi traditions, and internal martial arts.</p>
+            <p>Now based in North Carolina's Triangle area, he guides seekers through grounded, compassionate practices that cultivate awareness, vitality, and authentic presence.</p>
+            <div class="workshop-block">
+              <h4>Workshop: Sexual Alchemy & Vitality for Men</h4>
+              <p>This experiential two-day workshop invites men into a deeper relationship with their sexual energy, not as impulse or performance, but as life force.</p>
+              <p>Through breathwork, meditative awareness, and embodied energy practices, participants explore abdominal breathing and nervous system regulation, the Inner Smile and Six Healing Sounds, pelvic floor awareness, testicle breathing, energetic circulation, and the Microcosmic Orbit.</p>
+              <p>This workshop is not about suppression or control; it is about refinement. Sexual energy becomes fuel for presence, strength, creativity, and heart-centered leadership.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-photo" src="../assets/images/community/zumrad.jpg" alt="Zumrad Masar">
+            <h3>Zumrad Masar</h3>
+            <p>Zumrad Masar is a psychotherapist and experiential group facilitator specializing in dreamwork, somatic awareness, and integration of expanded states.</p>
+            <p>She weaves psychological insight with meditation and embodied practices, guiding participants toward deeper self-awareness and inner alignment.</p>
+            <div class="workshop-block">
+              <h4>Workshop: Dreaming the Self Awake</h4>
+              <p>Dreams are not random images of the night; they are movements of consciousness. In this experiential workshop, participants explore dreams as a pathway to meditation and self-awareness.</p>
+              <p>Through guided inquiry, embodiment practices, and witnessing meditation, participants learn how to move beyond analyzing dreams and instead enter into direct relationship with their symbolic landscape.</p>
+              <p>Blending psychological insight, somatic awareness, and contemplative practice, this workshop invites participants to experience dreaming not as something to decode but as something to awaken within.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="pricing" class="band">
+        <div class="section-head">
+          <h2>Pricing and registration.</h2>
+          <p>Registration is handled through the website. Lodging and meals are booked directly with Lake Junaluska after registration.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Early Bird</h3>
+            <div class="price">$295</div>
+            <p>Available until March 15, 2026. Includes full four-day retreat program, guided meditations, workshops, evening programs, facilitator support, and use of retreat spaces.</p>
+            <a class="button accent" href="https://www.oshoretreatusa.com/service-page/early-bird-registration-may-7-10">Book on Wix</a>
+          </article>
+          <article class="card">
+            <h3>Regular</h3>
+            <div class="price">$345</div>
+            <p>March 16-April 20, 2026. Registration includes the retreat program only; lodging and meals are arranged separately with the venue.</p>
+            <a class="button light" href="#register">How to Register</a>
+          </article>
+          <article class="card">
+            <h3>Late</h3>
+            <div class="price">$395</div>
+            <p>After April 20, 2026, if space remains. Registration remains transferable after the refund deadline.</p>
+            <a class="button light" href="#refund">Refund Policy</a>
+          </article>
+        </div>
+        <div class="note">Registration does not include lodging or meals. Estimated full retreat total with registration, lodging, and meals: $775-$1,095.</div>
+        <div class="grid-2" style="margin-top:24px;">
+          <article class="card">
+            <h3>Total cost estimates</h3>
+            <table class="table">
+              <tr><th>Full retreat package</th><td>$775-$1,095</td></tr>
+              <tr><th>Local participant with meals</th><td>$415-$555</td></tr>
+              <tr><th>Commuter registration only</th><td>$295-$395</td></tr>
+            </table>
+          </article>
+          <article class="card">
+            <h3>Part-time passes</h3>
+            <table class="table">
+              <tr><th>Friday Pass</th><td>$120</td></tr>
+              <tr><th>Saturday Pass</th><td>$140</td></tr>
+              <tr><th>Sunday Pass</th><td>$95</td></tr>
+              <tr><th>Friday + Saturday</th><td>$225</td></tr>
+              <tr><th>Saturday + Sunday</th><td>$215</td></tr>
+              <tr><th>Evening Satsang & Music</th><td>$35</td></tr>
+            </table>
+          </article>
+        </div>
+      </section>
+
+      <section class="band white compact">
+        <div class="section-head">
+          <h2>What you may experience.</h2>
+          <p>A calm scan of the retreat elements without asking visitors to read too much at once.</p>
+        </div>
+        <div class="card" style="width:min(1180px,100%);margin:0 auto;">
+          <ul class="program-list">
+            <li>Osho Dynamic Meditation</li>
+            <li>Osho Kundalini Meditation</li>
+            <li>Osho Nadabrahma Meditation</li>
+            <li>Osho Nataraj Meditation</li>
+            <li>Vipassana and silent sitting</li>
+            <li>White Robe Brotherhood meditation</li>
+            <li>Guided witnessing and silence</li>
+            <li>Sound healing and music</li>
+            <li>Dance, celebration, and body movement</li>
+            <li>Nature walks around Lake Junaluska</li>
+            <li>Group sharing and integration</li>
+            <li>Vegetarian meals and community time</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section-head">
+          <h2>Practical details.</h2>
+          <p>The practical details should feel reassuring, especially for first-time retreat participants.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Location</h3>
+            <p>Lake Junaluska Conference & Retreat Center, near Asheville and Waynesville, North Carolina.</p>
+            <p>Closest airport: Asheville Regional Airport (AVL), about 30-35 minutes or 34 miles away. Charlotte Douglas International Airport (CLT) is about 2 hours 15 minutes or 115 miles away.</p>
+          </article>
+          <article class="card">
+            <h3>Lodging</h3>
+            <p>Accommodation is provided by Lake Junaluska Conference & Retreat Center. Typical lodging options include shared rooms at approximately $120-$150 per night and private rooms at approximately $150-$180 per night.</p>
+          </article>
+          <article class="card">
+            <h3>Meals</h3>
+            <p>Healthy vegetarian meals are available onsite. A full meal plan is typically $120-$160. Dietary restrictions such as vegan, gluten-free, or nut-free can be shared in advance.</p>
+          </article>
+        </div>
+        <div class="note">Driving route: from I-40 take Exit 27 to US 19/23, then Exit 103 for Lake Junaluska. Avoid Exit 104 if coming from Asheville. On-site parking is free for guests.</div>
+      </section>
+
+      <section id="register" class="band sage">
+        <div class="register-panel">
+          <div>
+            <p class="eyebrow">Registration</p>
+            <h2>Ready to reserve your place?</h2>
+            <p>Step one is retreat registration. After you register, you receive the Lake Junaluska booking link for room and meal plan registration.</p>
+            <div class="mini-list">
+              <div>Register here on the website and pay the retreat registration fee.</div>
+              <div>Receive a confirmation email with Lake Junaluska booking details.</div>
+              <div>Reserve your room and meal plan directly with the venue.</div>
+            </div>
+          </div>
+          <div>
+            <a class="button accent wide" href="https://www.oshoretreatusa.com/service-page/early-bird-registration-may-7-10">Register on Wix</a>
+            <a class="button light wide" style="margin-top:12px;" href="https://www.reseze.net/servlet/SendPage?hotelid=1593&skipfirstpage=true&page=227746">Book Lodging & Meals</a>
+            <p class="muted">Current booking links are preserved while we prepare the new site flow.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="book-online" class="band compact">
+        <div class="section-head">
+          <h2>Current booking links.</h2>
+          <p>These preserve the live Wix service links during the migration.</p>
+        </div>
+        <div class="card" style="width:min(980px,100%);margin:0 auto;">
+          <div class="link-list">
+            <a class="link-row" href="https://www.oshoretreatusa.com/service-page/early-bird-registration-may-7-10"><strong>Early Bird Registration</strong><span>$295</span></a>
+            <a class="link-row" href="https://www.oshoretreatusa.com/booking-calendar/friday-pass-may-8"><strong>Friday Pass</strong><span>$120</span></a>
+            <a class="link-row" href="https://www.oshoretreatusa.com/booking-calendar/saturday-pass-may-9"><strong>Saturday Pass</strong><span>$140</span></a>
+            <a class="link-row" href="https://www.oshoretreatusa.com/booking-calendar/sunday-pass-may-10"><strong>Sunday Pass</strong><span>$95</span></a>
+            <a class="link-row" href="https://www.oshoretreatusa.com/booking-calendar/friday-saturday-pass-may-8-9"><strong>Friday + Saturday Pass</strong><span>$225</span></a>
+            <a class="link-row" href="https://www.oshoretreatusa.com/booking-calendar/saturday-sunday-pass-may-9-10"><strong>Saturday + Sunday Pass</strong><span>$215</span></a>
+            <a class="link-row" href="https://www.oshoretreatusa.com/booking-calendar/evening-satsang-music-only"><strong>Evening Satsang & Music Only</strong><span>$35</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="band">
+        <div class="section-head">
+          <h2>Retreat FAQ.</h2>
+          <p>Short answers for the questions people usually need before they feel ready to register.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Do I need previous meditation experience?</summary>
+            <p>No. Beginners are welcome. The schedule includes active and silent meditations, with guidance and space to participate at your own pace.</p>
+          </details>
+          <details>
+            <summary>What should I bring?</summary>
+            <p>Comfortable loose clothing, layers for mountain weather, walking shoes, a water bottle, toiletries, journal, and any personal items that support your stay.</p>
+          </details>
+          <details>
+            <summary>Are meals included?</summary>
+            <p>No. Retreat registration covers the program only. Meals and lodging are booked separately through Lake Junaluska Conference & Retreat Center after you register. Vegetarian meal plans are available for the full retreat or individual days.</p>
+          </details>
+          <details>
+            <summary>What types of rooms are available?</summary>
+            <p>Lake Junaluska offers a variety of accommodations including shared rooms, private rooms, and upgraded options. After registration, you receive a direct link to reserve lodging and choose the option that fits your budget and comfort.</p>
+          </details>
+          <details>
+            <summary>Can I attend only part of the retreat?</summary>
+            <p>Yes. Single-day and two-day passes are available for people unable to attend the full program. These passes include access to all sessions on selected days. Lodging and meals are not included.</p>
+          </details>
+          <details>
+            <summary>Do you offer scholarships or work-exchange?</summary>
+            <p>Yes. Partial scholarships and work-exchange opportunities may be available. Discounts apply only to the retreat registration fee, not to lodging or meals.</p>
+          </details>
+          <details>
+            <summary>Will there be time for silence and rest?</summary>
+            <p>Yes. The schedule balances activity and stillness, with meditation sessions, silent sitting periods, personal free time, and quiet hours each evening.</p>
+          </details>
+          <details>
+            <summary>Are the meditations religious?</summary>
+            <p>No. Osho meditations are non-religious practices focused on awareness, presence, and self-exploration. People of all beliefs and backgrounds are welcome.</p>
+          </details>
+          <details>
+            <summary>What should I wear?</summary>
+            <p>Comfortable, loose clothing is best. Red clothing or sannyas robes are recommended for daytime meditations and workshops. White clothing is encouraged for evening White Robe Brotherhood meditations.</p>
+          </details>
+          <details id="refund">
+            <summary>What happens if I need to cancel?</summary>
+            <p>Retreat registration is refundable, minus a $50 processing fee, until April 10, 2026. After that date, registration is transferable but not refundable. Lodging cancellations follow Lake Junaluska policies.</p>
+          </details>
+          <details>
+            <summary>Can I arrange travel with other participants?</summary>
+            <p>Yes. Many attendees carpool or coordinate airport pickups. If you want to connect with others for travel arrangements, contact us and we can help facilitate communication.</p>
+          </details>
+          <details>
+            <summary>Is the retreat accessible?</summary>
+            <p>Lake Junaluska has accessible facilities. If you have specific needs, contact us in advance so we can help make appropriate arrangements.</p>
+          </details>
+          <details>
+            <summary>Are pets allowed?</summary>
+            <p>Pets are not permitted inside retreat facilities. Service animals are welcome according to ADA guidelines.</p>
+          </details>
+          <details>
+            <summary>Is Wi-Fi available?</summary>
+            <p>Yes, Wi-Fi is available at Lake Junaluska, though participants are encouraged to use the retreat as an opportunity to unplug and be fully present.</p>
+          </details>
+          <details>
+            <summary>Will sessions be recorded?</summary>
+            <p>Retreat sessions are generally not recorded in order to maintain privacy and presence. Participants are encouraged to take notes for personal reflection.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="band white">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Get in Touch</p>
+            <h2>Questions before you register?</h2>
+            <p class="muted">If you need help choosing the best option, arranging travel, requesting scholarship/work-exchange support, or understanding the lodging process, reach out.</p>
+            <p class="muted"><strong>Email:</strong> <a href="mailto:oshonc369@gmail.com">oshonc369@gmail.com</a></p>
+            <p class="muted"><strong>Location:</strong> Lake Junaluska, NC, USA</p>
+          </div>
+          <form class="card contact-form">
+            <input class="field" value="First Name" aria-label="First Name">
+            <input class="field" value="Last Name" aria-label="Last Name">
+            <input class="field" value="Email" aria-label="Email">
+            <textarea class="field" aria-label="Message">Message</textarea>
+            <a class="button accent" href="mailto:oshonc369@gmail.com">Send Email</a>
+          </form>
+        </div>
+      </section>
+
+      <section class="band future-band">
+        <div class="centered">
+          <p class="eyebrow">Future Platform</p>
+          <h2>After the retreat page is beautiful, the site can grow.</h2>
+          <p>Osho Sage, the global centers map, and your Substack can become part of the same calm ecosystem without overwhelming the first visit.</p>
+        </div>
+        <div class="future-grid" style="margin-top:32px;">
+          <article id="sage" class="card">
+            <h3>Osho Sage</h3>
+            <p>A gentle chat companion for questions about life, meditation, awareness, relationships, work, silence, and retreat preparation.</p>
+            <a class="button light" href="../home.html#sage">Preview Osho Sage</a>
+          </article>
+          <article id="centers" class="card">
+            <h3>Osho Sangha</h3>
+            <p>A searchable directory of Osho centers and meditation communities around the world.</p>
+            <a class="button light" href="../index.html">View Directory Draft</a>
+          </article>
+          <article class="card">
+            <h3>Events</h3>
+            <p>A calendar for retreats, meditations, workshops, online circles, and community gatherings.</p>
+            <a class="button light" href="../events.html">View Events Draft</a>
+          </article>
+          <article id="writing" class="card">
+            <h3>Substack</h3>
+            <p>Your latest writing can appear here while Substack remains your publishing home.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>Osho Retreat USA</strong>
+          <p>Osho Meditation Retreat · Lake Junaluska, North Carolina.</p>
+        </div>
+        <div>
+          <p>Contact: oshonc369@gmail.com</p>
+          <p>Future: Osho Sage · Osho Sangha · Events · Substack</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
