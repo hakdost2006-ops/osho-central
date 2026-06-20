@@ -151,6 +151,32 @@
         gap: 12px;
       }
 
+      .quick-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+        max-width: 780px;
+      }
+
+      .quick-link {
+        min-height: 96px;
+        border-radius: 8px;
+        border: 1px solid rgba(63, 87, 72, 0.22);
+        background: rgba(255, 253, 248, 0.72);
+        padding: 16px;
+      }
+
+      .quick-link strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .quick-link span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
       .map-card {
         min-height: 570px;
         border-radius: 8px;
@@ -241,6 +267,14 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
+      }
+
+      .action-strip {
+        width: min(1180px, 100%);
+        margin: 22px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .card {
@@ -356,7 +390,8 @@
 
         .hero,
         .grid-3,
-        .grid-2 {
+        .grid-2,
+        .quick-links {
           grid-template-columns: 1fr;
         }
 
@@ -390,22 +425,17 @@
         <span>Osho Central</span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#sangha">Osho Sangha</a>
-        <a href="usa.html">USA</a>
-        <a href="mexico.html">Mexico</a>
-        <a href="brazil.html">Brazil</a>
-        <a href="colombia.html">Colombia</a>
-        <a href="ecuador.html">Ecuador</a>
-        <a href="costa-rica.html">Costa Rica</a>
-        <a href="dominican-republic.html">Dominican Rep.</a>
-        <a href="americas.html">Americas</a>
+        <a href="#sangha">Centers</a>
         <a href="events.html">Events</a>
-        <a href="support.html">Support</a>
-        <a href="#retreat">Retreat</a>
+        <a href="center-raleigh.html">Raleigh Profile</a>
+        <a href="usa.html">USA</a>
+        <a href="americas.html">Americas</a>
+        <a href="retreat/index.html">Retreat</a>
         <a href="#sage">Osho Sage</a>
         <a href="#writing">Writing</a>
+        <a href="support.html">Support</a>
       </nav>
-      <a class="button" href="#sangha">Find a Community</a>
+      <a class="button" href="#sangha">Find Osho Centers</a>
     </header>
 
     <main>
@@ -413,10 +443,25 @@
         <div>
           <p class="eyebrow">Global Osho Centers, Events & Sangha</p>
           <h1>Osho Central</h1>
-          <p class="lead">A calm global hub for finding Osho meditation communities, retreats, events, and wisdom resources around the world.</p>
+          <p class="lead">Find Osho meditation centers, local groups, retreats, and events in one calm global hub.</p>
           <div class="hero-actions">
-            <a class="button" href="#sangha">Find a Community</a>
-            <a class="button light" href="#retreat">View Featured Retreat</a>
+            <a class="button" href="#sangha">Find Osho Centers</a>
+            <a class="button light" href="events.html">Browse Events</a>
+            <a class="button light" href="retreat/index.html">View Retreat</a>
+          </div>
+          <div class="quick-links" aria-label="Primary site paths">
+            <a class="quick-link" href="usa.html">
+              <strong>Browse by Region</strong>
+              <span>USA, Mexico, Brazil, Colombia, Ecuador, Costa Rica, and more.</span>
+            </a>
+            <a class="quick-link" href="center-raleigh.html">
+              <strong>Featured Center Profile</strong>
+              <span>See how claimed center pages can look and function.</span>
+            </a>
+            <a class="quick-link" href="mailto:oshonc369@gmail.com?subject=Osho%20Central%20claim%20or%20event%20submission">
+              <strong>Claim or Submit</strong>
+              <span>Center leaders can claim profiles and send events for review.</span>
+            </a>
           </div>
         </div>
         <div class="map-card" aria-label="Osho Sangha map preview">
@@ -436,30 +481,76 @@
         <div class="section-head">
           <div>
             <p class="eyebrow">Osho Sangha</p>
-            <h2>Find communities near you.</h2>
+            <h2>Find centers and communities near you.</h2>
           </div>
           <p>Imported public listings can become verified and claimed profiles over time, so seekers know what is current and who manages each page.</p>
         </div>
         <div class="grid-3">
           <article class="card">
             <img class="card-image" src="assets/images/community/raleigh-group.jpg" alt="NC Osho Center community gathering in Raleigh">
-            <span class="badge">Claimed</span>
+            <span class="badge">Claimed Profile</span>
             <h3>Osho Meditation Group Raleigh</h3>
             <p>Raleigh, North Carolina · Dynamic, Kundalini, Nadabrahma, Nataraj, White Robe Brotherhood.</p>
-            <a class="button light" href="index.html">View Directory</a>
+            <a class="button light" href="center-raleigh.html">View Center Profile</a>
           </article>
           <article class="card">
-            <span class="badge">Imported</span>
+            <span class="badge">Directory</span>
+            <h3>Centers by Country</h3>
+            <p>Browse imported center listings across the Americas, with claim paths for center leaders.</p>
+            <a class="button light" href="americas.html">Browse Centers</a>
+          </article>
+          <article class="card">
+            <span class="badge">Start Here</span>
             <h3>USA Centers Starter Map</h3>
             <p>A first pass at imported USA Osho center and event listings, ready for review and claiming.</p>
-            <a class="button light" href="usa.html">View USA Draft</a>
+            <a class="button light" href="usa.html">View USA Centers</a>
           </article>
-          <article class="card">
-            <span class="badge">Imported</span>
-            <h3>Osho Leela</h3>
-            <p>Dorset, United Kingdom · Retreats, workshops, meditation, and community events.</p>
-            <a class="button light" href="index.html">View Directory</a>
-          </article>
+        </div>
+        <div class="action-strip">
+          <a class="button" href="americas.html">Browse All Centers</a>
+          <a class="button light" href="center-raleigh.html">View Sample Profile</a>
+          <a class="button light" href="mailto:oshonc369@gmail.com?subject=Claim%20an%20Osho%20Central%20center%20profile">Claim a Center</a>
+        </div>
+      </section>
+
+      <section id="events" class="band sage">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Events</p>
+            <h2>Upcoming Osho meditations, retreats, and gatherings.</h2>
+          </div>
+          <p>Events can start as admin-managed listings, then expand so claimed centers can submit meditations, workshops, and retreats.</p>
+        </div>
+        <div class="card" style="width:min(1180px,100%);margin:0 auto;">
+          <div class="event-row">
+            <strong>Nov 12-15</strong>
+            <div>
+              <h3>Osho Meditation Retreat USA</h3>
+              <p>Lake Junaluska, North Carolina</p>
+            </div>
+            <a class="button light" href="retreat/index.html">Retreat</a>
+          </div>
+          <div class="event-row">
+            <strong>Weekly</strong>
+            <div>
+              <h3>Dynamic Meditation</h3>
+              <p>Example recurring center event</p>
+            </div>
+            <a class="button light" href="events.html">Meditation</a>
+          </div>
+          <div class="event-row">
+            <strong>Online</strong>
+            <div>
+              <h3>Osho Sangha Online Circle</h3>
+              <p>Example online community gathering</p>
+            </div>
+            <a class="button light" href="events.html">Online</a>
+          </div>
+        </div>
+        <div class="action-strip">
+          <a class="button" href="events.html">View All Events</a>
+          <a class="button light" href="mailto:oshonc369@gmail.com?subject=Submit%20an%20Osho%20Central%20event">Submit an Event</a>
+          <a class="button light" href="mailto:oshonc369@gmail.com?subject=Manage%20events%20for%20my%20center">Manage Center Events</a>
         </div>
       </section>
 
@@ -477,42 +568,6 @@
             <h2>Four days of meditation, silence, inquiry, and celebration.</h2>
             <p>Open to beginners and experienced meditators alike, with Osho active meditations, speakers, workshops, lake walks, vegetarian meals, and community.</p>
             <a class="button" href="retreat/index.html">View Retreat Page</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="events" class="band sage">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Events</p>
-            <h2>Discover what is happening.</h2>
-          </div>
-          <p>Events can start as admin-managed listings, then expand so claimed centers can submit meditations, workshops, and retreats.</p>
-        </div>
-        <div class="card" style="width:min(1180px,100%);margin:0 auto;">
-          <div class="event-row">
-            <strong>Nov 12-15</strong>
-            <div>
-              <h3>Osho Meditation Retreat USA</h3>
-              <p>Lake Junaluska, North Carolina</p>
-            </div>
-            <a class="button light" href="events.html">Retreat</a>
-          </div>
-          <div class="event-row">
-            <strong>Weekly</strong>
-            <div>
-              <h3>Dynamic Meditation</h3>
-              <p>Example recurring center event</p>
-            </div>
-            <a class="button light" href="events.html">Meditation</a>
-          </div>
-          <div class="event-row">
-            <strong>Online</strong>
-            <div>
-              <h3>Osho Sangha Online Circle</h3>
-              <p>Example online community gathering</p>
-            </div>
-            <a class="button light" href="events.html">Online</a>
           </div>
         </div>
       </section>
@@ -571,7 +626,7 @@
           <p>Global Osho Centers, Events & Sangha.</p>
         </div>
         <div>
-          <p><a href="home.html">Home</a> · <a href="index.html">Osho Sangha</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="donation-policy.html">Donation Policy</a> · <a href="contact.html">Contact</a></p>
+          <p><a href="home.html">Home</a> · <a href="americas.html">Centers</a> · <a href="events.html">Events</a> · <a href="center-raleigh.html">Raleigh Profile</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="donation-policy.html">Donation Policy</a> · <a href="contact.html">Contact</a></p>
         </div>
       </div>
     </footer>
