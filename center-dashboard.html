@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Center Dashboard | Osho Central</title>
+    <link rel="stylesheet" href="country-directory.css">
+    <style>
+      .dashboard { width: min(1180px, 100%); margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: 18px; }
+      .sidebar { background: #eef2e8; border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+      .sidebar a { display: block; padding: 11px 12px; border-radius: 6px; color: var(--muted); }
+      .sidebar a.active { background: var(--white); color: var(--ink); font-weight: 800; }
+      .editor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+      .input-box { border: 1px solid var(--line); border-radius: 8px; background: var(--white); padding: 16px; min-height: 92px; }
+      .input-box strong { display: block; margin-bottom: 6px; }
+      .preview-card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+      .event-mini { display: grid; grid-template-columns: 110px 1fr auto; gap: 12px; align-items: center; border-top: 1px solid var(--line); padding: 14px 0; }
+      @media (max-width: 940px) { .dashboard, .editor-grid, .event-mini { display: block; } .sidebar, .input-box { margin-top: 14px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="home.html"><span class="mark" aria-hidden="true"></span><span>Osho Central</span></a>
+      <nav aria-label="Main navigation">
+        <a href="americas.html">Centers</a>
+        <a href="events.html">Events</a>
+        <a href="claim-center.html">Claim</a>
+        <a href="submit-event.html">Submit Event</a>
+      </nav>
+      <a class="button" href="submit-event.html">Add Event</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Manager Preview</p>
+            <h1>One quiet dashboard for each center.</h1>
+            <p class="lead">After approval, center leaders should see only their own profile, events, photos, contact details, and review status.</p>
+            <div class="card-actions">
+              <a class="button" href="claim-center.html">Claim Access</a>
+              <a class="button light" href="center-raleigh.html">View Public Profile</a>
+            </div>
+          </div>
+          <div class="preview-card">
+            <span class="badge">Claimed Profile</span>
+            <h3>Osho Meditation Group Raleigh</h3>
+            <p>Raleigh, North Carolina</p>
+            <div class="profile-list">
+              <div><strong>Status</strong><span>Verified manager</span></div>
+              <div><strong>Events</strong><span>3 visible, 1 draft</span></div>
+              <div><strong>Updated</strong><span>Ready for review</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band white">
+        <div class="dashboard">
+          <aside class="sidebar">
+            <a class="active" href="#profile">Profile Details</a>
+            <a href="#schedule">Meditation Schedule</a>
+            <a href="#events">Events</a>
+            <a href="#photos">Photos</a>
+            <a href="#review">Review Status</a>
+          </aside>
+          <div>
+            <div class="section-head" style="width:100%;margin-bottom:18px;">
+              <div><p class="eyebrow">Editable Profile</p><h2>What managers can update.</h2></div>
+              <p>The real version saves changes as drafts, then publishes instantly or after review depending on trust level.</p>
+            </div>
+            <div class="editor-grid">
+              <div class="input-box"><strong>Center name</strong><p>Osho Meditation Group Raleigh</p></div>
+              <div class="input-box"><strong>Location</strong><p>Raleigh, North Carolina</p></div>
+              <div class="input-box"><strong>Contact</strong><p>Email, phone, website, social links</p></div>
+              <div class="input-box"><strong>Facilities</strong><p>Home meditation room, weekly gatherings, retreats</p></div>
+              <div class="input-box"><strong>Meditations</strong><p>Dynamic, Kundalini, Nadabrahma, Nataraj, White Robe</p></div>
+              <div class="input-box"><strong>Public description</strong><p>A welcoming North Carolina Osho meditation community.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="band sage">
+        <div class="section-head">
+          <div><p class="eyebrow">Event Manager</p><h2>Events connected to the profile.</h2></div>
+          <p>Every event should appear on the center page, global events page, and country pages when approved.</p>
+        </div>
+        <div class="source-note">
+          <div class="event-mini"><strong>Nov 12-15</strong><div><h3>Osho Meditation Retreat USA</h3><p>Published · Lake Junaluska, NC</p></div><a class="button light" href="retreat/index.html">View</a></div>
+          <div class="event-mini"><strong>Weekly</strong><div><h3>Dynamic Meditation</h3><p>Published · Raleigh</p></div><a class="button light" href="events.html">View</a></div>
+          <div class="event-mini"><strong>Draft</strong><div><h3>New Meditation Day</h3><p>Needs date, time, and registration link.</p></div><a class="button" href="submit-event.html">Edit Draft</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div><strong>Osho Central</strong><p>Global Osho Centers, Events & Sangha.</p></div>
+        <div><p><a href="home.html">Home</a> · <a href="claim-center.html">Claim</a> · <a href="submit-event.html">Submit Event</a></p></div>
+      </div>
+    </footer>
+  </body>
+</html>
