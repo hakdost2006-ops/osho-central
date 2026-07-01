@@ -180,6 +180,12 @@
         display: block;
       }
 
+      .feature-card.poster img {
+        aspect-ratio: 4 / 5;
+        object-fit: contain;
+        background: #fbf8f0;
+      }
+
       .band {
         padding: clamp(56px, 8vw, 92px) clamp(18px, 4vw, 58px);
       }
@@ -380,12 +386,12 @@
               <a class="button light" href="submit-event.html">Submit Event</a>
             </div>
           </div>
-          <aside class="feature-card">
-            <img src="assets/images/community/raleigh-group.jpg" alt="NC Osho Center community gathering in Raleigh">
+          <aside class="feature-card poster">
+            <img src="assets/images/community/oshofest-ny-2026.jpg" alt="Oshofest New York 2026 flyer with Osho portrait and autumn flowers">
             <p class="eyebrow">Featured Event</p>
-            <h3>Osho Meditation Retreat USA</h3>
-            <p>November 12-15, 2026 · Lake Junaluska, North Carolina</p>
-            <a class="button" href="retreat/index.html">View Retreat Page</a>
+            <h3>Oshofest New York</h3>
+            <p>October 15-18, 2026 · The Abode of the Message, New Lebanon, New York</p>
+            <a class="button" href="#oshofest-ny">View Oshofest Details</a>
           </aside>
         </div>
       </section>
@@ -408,6 +414,22 @@
         </div>
 
         <div class="event-list">
+          <article id="oshofest-ny" class="event-card">
+            <div class="datebox"><div><strong>15</strong><span>Oct 2026</span></div></div>
+            <div>
+              <span class="badge">Festival</span>
+              <h3>Oshofest New York: A Gathering of the Buddhas</h3>
+              <p>Autumn Osho gathering at The Abode with active meditations, Evening Satsang with live music, Creativity Night, Sannyas Celebration, vegetarian meals, and mountain scenery.</p>
+              <div class="meta">
+                <span class="badge">The Abode, New Lebanon, NY</span>
+                <span class="badge">$540 all inclusive</span>
+                <span class="badge">Live music</span>
+                <span class="badge">Oct 15 opening evening</span>
+              </div>
+            </div>
+            <a class="button" href="#oshofest-details">Details</a>
+          </article>
+
           <article class="event-card">
             <div class="datebox"><div><strong>12</strong><span>Nov 2026</span></div></div>
             <div>
@@ -455,21 +477,59 @@
         </div>
       </section>
 
+      <section id="oshofest-details" class="band sage">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Oshofest New York</p>
+            <h2>October 15-18, 2026 at The Abode.</h2>
+          </div>
+          <p>The schedule is still in flow and will be finalized before the festival, but Dynamic, Kundalini, and Evening Satsang will be consistent features.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Opening</h3>
+            <p>Thursday, October 15, 2026 at 5pm with Osho Kundalini Meditation, followed by dinner and Evening Satsang with the band.</p>
+          </article>
+          <article class="card">
+            <h3>Full Festival Days</h3>
+            <p>Friday and Saturday include full days of meditation with breakfast, lunch, and dinner. Saturday evening includes the beloved Creativity Night.</p>
+          </article>
+          <article class="card">
+            <h3>Closing</h3>
+            <p>Sunday includes breakfast, Sannyas Celebration, and officially ends at 1pm with lunch.</p>
+          </article>
+        </div>
+        <div class="grid-3" style="margin-top:16px;">
+          <article class="card">
+            <h3>Early Arrival</h3>
+            <p>The Abode opens Wednesday for those who want to arrive early and relax. A nominal Wednesday accommodation fee is charged by The Abode.</p>
+          </article>
+          <article class="card">
+            <h3>Food and Place</h3>
+            <p>The kitchen opens Thursday evening. Before then, restaurants are available nearby in New Lebanon. The Abode is a functioning Sufi community surrounded by nature and walking paths.</p>
+          </article>
+          <article class="card">
+            <h3>Contact</h3>
+            <p>Email: oneskymusic@gmail.com<br>Phone: +1 (203) 434-6754<br>Venue: theabode.org</p>
+          </article>
+        </div>
+      </section>
+
       <section class="band sage">
         <div class="section-head">
           <div>
             <p class="eyebrow">Calendar View</p>
-            <h2>A simple monthly scan.</h2>
+            <h2>A simple autumn scan.</h2>
           </div>
           <p>This is how the final site can help people quickly see what is happening without feeling crowded.</p>
         </div>
         <div class="grid-3">
           <article class="card">
-            <h3>November 2026</h3>
-            <div class="mini-calendar" aria-label="November calendar preview">
+            <h3>October 2026</h3>
+            <div class="mini-calendar" aria-label="October calendar preview">
               <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-              <span>8</span><span>9</span><span>10</span><span>11</span><span class="active">12</span><span class="active">13</span><span class="active">14</span>
-              <span class="active">15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+              <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+              <span class="active">15</span><span class="active">16</span><span class="active">17</span><span class="active">18</span><span>19</span><span>20</span><span>21</span>
               <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
             </div>
           </article>
