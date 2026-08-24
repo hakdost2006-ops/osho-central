@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Register for the Osho Meditation Retreat at Lake Junaluska, North Carolina.">
+    <title>Register | Osho Meditation Retreat</title>
+    <style>
+      :root { --ink:#24221d; --muted:#716d63; --cream:#fbf8f0; --paper:#f2ecdf; --sage:#6d806f; --sage-dark:#3f5748; --white:#fffdf8; --line:rgba(33,24,21,.14); --shadow:0 18px 42px rgba(48,39,28,.10); }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:var(--cream); font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+      a { color:inherit; text-decoration:none; }
+      .topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px clamp(18px,4vw,58px); border-bottom:1px solid var(--line); background:rgba(255,253,248,.94); }
+      .brand { display:flex; align-items:center; gap:12px; font-weight:780; }
+      .mark { width:36px; height:36px; border-radius:50%; background:radial-gradient(circle at 50% 45%,#efe2c9 0 15%,transparent 16%),conic-gradient(from 15deg,var(--sage-dark),var(--sage),#e3c8a8,#889072,var(--sage-dark)); box-shadow:inset 0 0 0 3px rgba(255,255,255,.5); }
+      .button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 18px; border:1px solid transparent; border-radius:6px; background:var(--sage-dark); color:white; font-weight:760; cursor:pointer; }
+      .button.light { background:transparent; border-color:var(--line); color:var(--ink); }
+      .button.disabled { background:#d8d1c4; color:#686158; cursor:not-allowed; }
+      .hero { padding:clamp(42px,7vw,78px) clamp(18px,4vw,58px) clamp(34px,5vw,58px); background:linear-gradient(90deg,rgba(251,248,240,.91),rgba(251,248,240,.54)),url("../assets/images/lake-junaluska-header.jpg") center/cover; }
+      .hero-inner,.content { width:min(1080px,100%); margin:0 auto; }
+      .eyebrow { margin:0 0 12px; color:var(--sage-dark); font-size:13px; font-weight:780; text-transform:uppercase; }
+      h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; letter-spacing:0; }
+      h1 { max-width:720px; margin:0; font-size:clamp(42px,6vw,70px); line-height:1.02; }
+      .lead { max-width:680px; margin:18px 0 0; color:#48443d; font-size:19px; }
+      .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:32px; overflow:hidden; border:1px solid var(--line); border-radius:8px; background:var(--line); }
+      .step { min-height:112px; padding:18px; background:rgba(255,253,248,.86); }
+      .step span { display:block; margin-bottom:5px; color:var(--sage-dark); font-size:13px; font-weight:780; }
+      .step strong { font-size:18px; }
+      .band { padding:clamp(44px,7vw,78px) clamp(18px,4vw,58px); }
+      .layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; align-items:start; }
+      .card { padding:clamp(22px,4vw,34px); border:1px solid var(--line); border-radius:8px; background:var(--white); box-shadow:0 8px 20px rgba(48,26,15,.035); }
+      .card h2 { margin:0 0 9px; font-size:34px; line-height:1.1; }
+      .card h3 { margin:0 0 8px; font-size:23px; }
+      .muted { color:var(--muted); }
+      .form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:26px; }
+      .field { display:grid; gap:7px; }
+      .field.full { grid-column:1 / -1; }
+      label { font-size:14px; font-weight:720; }
+      input,select,textarea { width:100%; min-height:48px; padding:12px 13px; border:1px solid var(--line); border-radius:6px; background:#fffef9; color:var(--ink); font:inherit; }
+      textarea { min-height:112px; resize:vertical; }
+      .check { display:flex; align-items:flex-start; gap:10px; grid-column:1 / -1; color:var(--muted); font-size:14px; }
+      .check input { width:18px; min-height:18px; margin:2px 0 0; }
+      .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+      .aside { display:grid; gap:18px; }
+      .aside .card { padding:24px; }
+      .list { display:grid; gap:12px; padding:0; margin:16px 0 0; list-style:none; }
+      .list li { padding-top:12px; border-top:1px solid var(--line); color:var(--muted); }
+      .notice { margin-top:18px; padding:15px 16px; border-left:4px solid var(--sage); background:#eef2e8; color:#4e5e50; }
+      .payment { display:none; margin-top:24px; border-color:rgba(63,87,72,.26); background:#f8fbf5; }
+      .payment.ready { display:block; }
+      .payment .button { margin-top:12px; width:100%; }
+      .small { font-size:13px; }
+      .footer { padding:32px clamp(18px,4vw,58px); background:#ede5d6; color:var(--muted); }
+      .footer-inner { width:min(1080px,100%); margin:0 auto; display:flex; justify-content:space-between; gap:20px; }
+      .honeypot { position:absolute; left:-9999px; }
+      @media (max-width:760px) { .steps,.layout,.form-grid { grid-template-columns:1fr; } .field.full,.check { grid-column:auto; } .topbar .button { display:none; } .footer-inner { display:block; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span>Osho Meditation Retreat</span></a>
+      <a class="button light" href="index.html">Back to retreat</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">November 12-15, 2026 Â· Lake Junaluska, North Carolina</p>
+          <h1>Join the retreat.</h1>
+          <p class="lead">The retreat program is offered on a pay-as-much-as-you-can basis. Begin with this short registration, then choose any contribution that feels right for you.</p>
+          <div class="steps" aria-label="Registration steps">
+            <div class="step"><span>1. Register</span><strong>Tell us you are coming.</strong></div>
+            <div class="step"><span>2. Contribute</span><strong>Give what feels right.</strong></div>
+            <div class="step"><span>3. Reserve your stay</span><strong>Book lodging and meals with Lake Junaluska.</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="content layout">
+          <section class="card" aria-labelledby="registration-heading">
+            <h2 id="registration-heading">Retreat registration</h2>
+            <p class="muted">Your details are sent directly to the retreat team by email. We use them only to respond about this retreat and practical arrangements.</p>
+            <form id="registration-form">
+              <div class="form-grid">
+                <div class="field"><label for="first-name">First name</label><input id="first-name" name="firstName" autocomplete="given-name" required></div>
+                <div class="field"><label for="last-name">Last name</label><input id="last-name" name="lastName" autocomplete="family-name" required></div>
+                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+                <div class="field"><label for="phone">Phone <span class="muted">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+                <div class="field"><label for="attendance">Attendance</label><select id="attendance" name="attendance" required><option value="">Choose one</option><option>Full retreat, November 12-15</option><option>I would like to discuss a partial stay</option></select></div>
+                <div class="field"><label for="stay">Lodging plan</label><select id="stay" name="stay" required><option value="">Choose one</option><option>I will reserve lodging at Lake Junaluska</option><option>I am local / arranging my own stay</option><option>I would like help with options</option></select></div>
+                <div class="field full"><label for="note">Anything you would like us to know? <span class="muted">(optional)</span></label><textarea id="note" name="note" placeholder="Travel questions, accessibility needs, or anything else."></textarea></div>
+                <label class="check"><input type="checkbox" required><span>I understand that the retreat program is pay as much as you can. Lodging and meals are separate costs reserved directly with Lake Junaluska.</span></label>
+                <div class="honeypot" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+              </div>
+              <div class="actions"><button class="button" type="submit">Send registration request</button><a class="button light" href="index.html#faq">Read retreat FAQ</a></div>
+            </form>
+            <div id="payment-panel" class="card payment" aria-live="polite">
+              <h3>Thank you. Choose your contribution.</h3>
+              <p class="muted">Your registration email is ready to send. After it opens, you can continue to Stripeâs secure checkout and choose any amount.</p>
+              <a id="stripe-contribution" class="button disabled" href="#" aria-disabled="true">Secure contribution link coming soon</a>
+              <p id="payment-help" class="small muted">For now, please email us and we will help arrange your contribution.</p>
+            </div>
+          </section>
+
+          <aside class="aside">
+            <article class="card"><p class="eyebrow">Program contribution</p><h3>Pay as much as you can.</h3><p class="muted">There is no fixed registration price. Give what is comfortable and possible for you.</p></article>
+            <article class="card"><p class="eyebrow">Venue stay</p><h3>Lodging and meals</h3><ul class="list"><li>Shared room: about $120-$150 per night</li><li>Private room: about $150-$180 per night</li><li>Meal plan: about $120-$160</li></ul><div class="notice small">Lake Junaluska handles these reservations and payments directly.</div></article>
+            <article class="card"><h3>Questions?</h3><p class="muted">We are happy to help with travel, lodging, or participation questions.</p><a class="button light" href="mailto:oshonc369@gmail.com?subject=Osho%20Meditation%20Retreat%20Question">Email the retreat team</a></article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="footer-inner"><div><strong>Osho Meditation Retreat</strong><p>Lake Junaluska, North Carolina.</p></div><div><p>Contact: <a href="mailto:oshonc369@gmail.com">oshonc369@gmail.com</a></p></div></div></footer>
+    <script src="../payments-config.js"></script>
+    <script>
+      const form = document.querySelector("#registration-form");
+      const paymentPanel = document.querySelector("#payment-panel");
+      const contributionButton = document.querySelector("#stripe-contribution");
+      const paymentHelp = document.querySelector("#payment-help");
+      const contributionLink = oshoCentralPaymentLinks.retreatContribution;
+
+      if (contributionLink) {
+        contributionButton.href = contributionLink;
+        contributionButton.target = "_blank";
+        contributionButton.rel = "noopener noreferrer";
+        contributionButton.classList.remove("disabled");
+        contributionButton.removeAttribute("aria-disabled");
+        contributionButton.textContent = "Continue to secure Stripe checkout";
+        paymentHelp.textContent = "Stripe securely processes your contribution. Card details are never collected by Osho Central.";
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const values = new FormData(form);
+        if (values.get("website")) return;
+        const lines = [
+          "I would like to register for the Osho Meditation Retreat.",
+          "",
+          `Name: ${values.get("firstName")} ${values.get("lastName")}`,
+          `Email: ${values.get("email")}`,
+          `Phone: ${values.get("phone") || "Not provided"}`,
+          `Attendance: ${values.get("attendance")}`,
+          `Lodging plan: ${values.get("stay")}`,
+          `Notes: ${values.get("note") || "None"}`,
+          "",
+          "I understand that the retreat program is pay as much as I can and that lodging and meals are separate."
+        ];
+        window.location.href = `mailto:${oshoCentralPaymentLinks.contactEmail}?subject=${encodeURIComponent("Osho Meditation Retreat Registration")}&body=${encodeURIComponent(lines.join("\n"))}`;
+        paymentPanel.classList.add("ready");
+        paymentPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    </script>
+    <script src="../site-notice.js" defer></script>
+  </body>
+</html>
