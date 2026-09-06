@@ -186,6 +186,31 @@
         background: #fbf8f0;
       }
 
+      .feature-facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 18px 0 20px;
+      }
+
+      .feature-facts div {
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(255, 253, 248, 0.72);
+      }
+
+      .feature-facts strong,
+      .feature-facts span {
+        display: block;
+      }
+
+      .feature-facts span {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
       .band {
         padding: clamp(56px, 8vw, 92px) clamp(18px, 4vw, 58px);
       }
@@ -352,6 +377,10 @@
         .event-card {
           align-items: stretch;
         }
+
+        .feature-facts {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -366,11 +395,12 @@
         <a href="participating-centers.html">Participating Centers</a>
         <a href="events.html">Events</a>
         <a href="support.html">Support</a>
-        <a href="retreat/index.html">Retreat</a>
+        <a class="featured-retreat-link" href="retreat/index.html">NC Retreat: Nov 12-15</a>
         <a href="home.html#sage">Osho Sage</a>
         <a href="home.html#writing">Writing</a>
+        <a href="submit-event.html">Submit Event</a>
       </nav>
-      <a class="button" href="submit-event.html">Submit Event</a>
+      <a class="button" href="retreat/index.html">Lake Junaluska Retreat</a>
     </header>
 
     <main>
@@ -379,18 +409,26 @@
           <div>
             <p class="eyebrow">Osho Central Events</p>
             <h1>Find meditations, retreats, workshops, and online circles.</h1>
-            <p class="lead">A calm event calendar for Osho communities worldwide, beginning with the Raleigh retreat and expanding as centers claim and manage their profiles.</p>
+            <p class="lead">A calm event calendar for organizer-confirmed Osho gatherings, with the Lake Junaluska retreat now open for registration.</p>
             <div class="hero-actions">
-              <a class="button" href="#events">Browse Events</a>
+              <a class="button" href="#lake-junaluska-retreat">Lake Junaluska Retreat</a>
+              <a class="button light" href="#events">Browse All Events</a>
               <a class="button light" href="submit-event.html">Submit Event</a>
             </div>
           </div>
           <aside class="feature-card">
-            <p class="eyebrow">Featured International Event</p>
-            <h3>OSHO Festival Deutschland</h3>
-            <p>October 1-4, 2026 · Waldenbuch, Germany</p>
-            <p>Four days of festival, friendship, and celebration hosted by OSHO Events Center.</p>
-            <a class="button" href="#osho-festival-deutschland">View Festival Details</a>
+            <img src="assets/images/lake-junaluska-header.jpg" alt="Lake Junaluska and the North Carolina mountains">
+            <p class="eyebrow">Featured North Carolina Retreat</p>
+            <h3>Osho Meditation Retreat</h3>
+            <p>November 12-15, 2026 · Lake Junaluska, North Carolina</p>
+            <div class="feature-facts">
+              <div><strong>As you like</strong><span>Give what feels right for the retreat program</span></div>
+              <div><strong>Four days</strong><span>Meditation, silence, inquiry, and celebration</span></div>
+            </div>
+            <div class="hero-actions">
+              <a class="button" href="https://www.oshoretreatusa.com/retreat-registration">Register Now</a>
+              <a class="button light" href="retreat/index.html">Full Retreat Page</a>
+            </div>
           </aside>
         </div>
       </section>
@@ -460,19 +498,20 @@
             <a class="button" href="#oshofest-details">Details</a>
           </article>
 
-          <article class="event-card">
+          <article id="lake-junaluska-retreat" class="event-card">
             <div class="datebox"><div><strong>12</strong><span>Nov 2026</span></div></div>
             <div>
-              <span class="badge">Retreat</span>
-              <h3>Osho Meditation Retreat USA</h3>
+              <span class="badge">Featured Retreat</span>
+              <h3>Osho Meditation Retreat</h3>
               <p>Four days of meditation, silence, inquiry, and celebration at Lake Junaluska.</p>
               <div class="meta">
+                <span class="badge">November 12-15, 2026</span>
                 <span class="badge">Lake Junaluska, NC</span>
-                <span class="badge">Hosted by Raleigh</span>
-                <span class="badge">Claimed Center</span>
+                <span class="badge">As you like</span>
+                <span class="badge">Beginners welcome</span>
               </div>
             </div>
-            <a class="button" href="retreat/index.html">View Event</a>
+            <a class="button" href="#lake-junaluska-details">Details</a>
           </article>
 
           <article class="event-card">
@@ -504,6 +543,39 @@
             </div>
             <a class="button light" href="submit-event.html">Submit Similar Event</a>
           </article>
+        </div>
+      </section>
+
+      <section id="lake-junaluska-details" class="band sage">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Featured North Carolina Retreat</p>
+            <h2>Osho Meditation Retreat at Lake Junaluska.</h2>
+          </div>
+          <p>November 12-15, 2026 · Lake Junaluska, North Carolina</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="badge">The Experience</span>
+            <h3>Meditation and celebration</h3>
+            <p>Four days of Osho active meditations, silent sitting, inquiry, workshops, music, nature walks, and community. Beginners and experienced meditators are welcome.</p>
+          </article>
+          <article class="card">
+            <span class="badge">Daily Rhythm</span>
+            <h3>Thursday through Sunday</h3>
+            <p>Arrival and opening begin Thursday afternoon. Friday and Saturday offer full programs from Dynamic Meditation through the evening gathering. Sunday closes with integration and departures.</p>
+          </article>
+          <article class="card">
+            <span class="badge">Participation</span>
+            <h3>As you like</h3>
+            <p>Contribute any amount that feels right and possible for you. Your contribution supports the four-day retreat program, guided meditations, workshops, evening programs, and facilitator support.</p>
+            <p>Lodging and meals are not included and are paid directly to Lake Junaluska.</p>
+          </article>
+        </div>
+        <div class="hero-actions" style="width:min(1180px,100%);margin:24px auto 0;">
+          <a class="button" href="https://www.oshoretreatusa.com/retreat-registration">Register Now</a>
+          <a class="button light" href="retreat/index.html#schedule">See Full Schedule</a>
+          <a class="button light" href="https://www.reseze.net/servlet/SendPage?hotelid=1593&amp;skipfirstpage=true&amp;page=227746" target="_blank" rel="noopener noreferrer">Book Lodging &amp; Meals</a>
         </div>
       </section>
 
