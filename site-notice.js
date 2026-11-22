@@ -17,10 +17,18 @@
           nav.append(retreatLink);
         }
         retreatLink.classList.add("featured-retreat-link");
-        retreatLink.textContent = "NC Retreat: Nov 12-15";
-        retreatLink.setAttribute("aria-label", "Osho Meditation Retreat at Lake Junaluska, November 12 to 15, 2026");
+        retreatLink.textContent = "2026 Retreat Recap";
+        retreatLink.setAttribute("aria-label", "Read the 2026 Lake Junaluska Osho Meditation Retreat recap");
       });
     }
+
+    const retreatArchivePath = inRetreatSection ? "index.html" : "retreat/index.html";
+    document.querySelectorAll('a[href*="oshoretreatusa.com/retreat-registration"], a[href*="reseze.net/servlet/SendPage"]').forEach((link) => {
+      link.href = retreatArchivePath;
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+      if (/register|reserve|book|join/i.test(link.textContent)) link.textContent = "Retreat Recap";
+    });
     const footer = document.querySelector("footer .footer-inner");
     if (footer && !footer.querySelector(".independence-notice")) {
       const notice = document.createElement("p");
