@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Stage 1 SEO -->
+    <meta name="robots" content="noindex, follow">
+    <!-- /Stage 1 SEO -->
     <title>Center Dashboard | Osho Central</title>
     <link rel="stylesheet" href="country-directory.css">
     <style>
@@ -59,12 +62,9 @@
         <div class="dashboard">
           <aside class="sidebar">
             <a class="active" href="#profile">Profile Details</a>
-            <a href="#schedule">Meditation Schedule</a>
             <a href="#events">Events</a>
-            <a href="#photos">Photos</a>
-            <a href="#review">Review Status</a>
           </aside>
-          <div>
+          <div id="profile">
             <div class="section-head" style="width:100%;margin-bottom:18px;">
               <div><p class="eyebrow">Editable Profile</p><h2>What managers can update.</h2></div>
               <p>The real version saves changes as drafts, then publishes instantly or after review depending on trust level.</p>
@@ -84,10 +84,10 @@
       <section id="events" class="band sage">
         <div class="section-head">
           <div><p class="eyebrow">Event Manager</p><h2>Events connected to the profile.</h2></div>
-          <p>Every event should appear on the center page, global events page, and country pages when approved.</p>
+          <p>Confirmed events may appear on the center profile and the public events page after review.</p>
         </div>
         <div class="source-note">
-          <div class="event-mini"><strong>Nov 12-15</strong><div><h3>Osho Meditation Retreat USA</h3><p>Published · Lake Junaluska, NC</p></div><a class="button light" href="retreat/index.html">View</a></div>
+          <div class="event-mini"><strong>Completed</strong><div><h3>Osho Meditation Retreat USA</h3><p>Retreat recap · Lake Junaluska, NC</p></div><a class="button light" href="retreat/index.html">View</a></div>
           <div class="event-mini"><strong>Weekly</strong><div><h3>Dynamic Meditation</h3><p>Published · Raleigh</p></div><a class="button light" href="events.html">View</a></div>
           <div class="event-mini"><strong>Draft</strong><div><h3>New Meditation Day</h3><p>Needs date, time, and registration link.</p></div><a class="button" href="submit-event.html">Edit Draft</a></div>
         </div>
@@ -96,7 +96,7 @@
 
     <footer>
       <div class="footer-inner">
-        <div><strong>Osho Central</strong><p>Global Osho Centers, Events & Sangha.</p></div>
+        <div><strong>Osho Central</strong><p>An independent, consent-based community project.</p></div>
         <div><p><a href="home.html">Home</a> · <a href="claim-center.html">Claim</a> · <a href="submit-event.html">Submit Event</a></p></div>
       </div>
     </footer>
