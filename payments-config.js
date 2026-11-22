@@ -5,6 +5,6 @@ const oshoCentralPaymentLinks = {
   centerPageSupport: "",
   // Create a Stripe Payment Link with "Customers choose what to pay" enabled,
   // then paste the public https://buy.stripe.com/... link here.
-  retreatContribution: "",
+  retreatContribution: "https://www.oshoretreatusa.com/retreat-registration",
   contactEmail: "oshonc369@gmail.com"
 };
